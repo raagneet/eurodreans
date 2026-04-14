@@ -18,19 +18,19 @@ export function CTASection() {
            viewport={{ once: true }}
            transition={{ duration: 0.5 }}
         >
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gray-900">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gray-900">
             Start Your <br/>
             <span className="text-gradient">Italy Journey Today</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-10">
+          <p className="text-lg sm:text-xl text-gray-600 mb-10">
             Don't let another intake pass by. Book your free consultation and secure your fully-funded Master's seat.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-             <Button onClick={openBookCall} variant="gradient" size="lg" className="w-full sm:w-auto px-10 py-6 text-lg">
+             <Button onClick={openBookCall} variant="gradient" size="lg" className="w-full sm:w-auto px-6 sm:px-10 py-6 text-base sm:text-lg">
                 Book Free Call NOW
              </Button>
-             <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 py-6 text-lg border-gray-200 bg-white hover:bg-gray-50 gap-2 text-gray-900">
+             <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-6 text-base sm:text-lg border-gray-200 bg-white hover:bg-gray-50 gap-2 text-gray-900">
                 <MessageCircle className="text-green-500" />
                 WhatsApp Us
              </Button>

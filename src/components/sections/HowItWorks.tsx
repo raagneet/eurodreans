@@ -35,7 +35,7 @@ export function HowItWorksSection() {
         </div>
 
         <div className="relative">
-          {/* Connector Line */}
+          {/* Desktop Horizontal Line */}
           <div className="hidden md:block absolute top-10 left-[15%] w-[70%] h-1 bg-gray-200 -translate-y-1/2 rounded-full overflow-hidden z-0">
              <motion.div 
                initial={{ width: 0 }}
@@ -46,7 +46,18 @@ export function HowItWorksSection() {
              />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 relative z-10">
+          {/* Mobile Vertical Line */}
+          <div className="md:hidden absolute top-10 left-1/2 w-1 h-[75%] bg-gray-100 -translate-x-1/2 rounded-full overflow-hidden z-0">
+             <motion.div 
+               initial={{ height: 0 }}
+               whileInView={{ height: "100%" }}
+               viewport={{ once: true, margin: "-100px" }}
+               transition={{ duration: 2, ease: "easeInOut" }}
+               className="w-full bg-gradient-to-b from-primary via-secondary to-accent" 
+             />
+          </div>
+
+          <div className="grid gap-12 md:gap-12 relative z-10">
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}

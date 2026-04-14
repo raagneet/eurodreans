@@ -24,12 +24,12 @@ export function HeroSection() {
         >
 
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
             Study in Italy with <br />
             <span className="text-gradient">100% Scholarships</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
             Stop worrying about tuition fees. We help ambitious students secure 
             fully-funded Master&apos;s admissions in top Italian public universities.
           </p>
