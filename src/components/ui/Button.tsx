@@ -30,8 +30,10 @@ const buttonVariants = cva(
   }
 );
 
+import { HTMLMotionProps } from "framer-motion";
+
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<HTMLMotionProps<"button">, "ref">,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
