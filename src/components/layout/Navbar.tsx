@@ -18,8 +18,8 @@ export function Navbar() {
   });
 
   const navLinks = [
-    { name: "Programs", href: "#programs" },
     { name: "Scholarships", href: "#scholarships" },
+    { name: "Programs", href: "#programs" },
     { name: "Process", href: "#process" },
     { name: "Testimonials", href: "#testimonials" },
   ];
@@ -34,9 +34,18 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Eurodreams
+        <Link href="/" className="flex items-center gap-2.5 group">
+          {/* Custom Modern Logo Mark */}
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]">
+            <div className="absolute inset-0 rounded-xl bg-white/30 blur-sm mix-blend-overlay"></div>
+            <svg className="relative w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          {/* Typography */}
+          <span className="text-2xl md:text-[28px] font-black tracking-tighter">
+            <span className="text-slate-900 drop-shadow-sm">Euro</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 drop-shadow-sm">dreams</span>
           </span>
         </Link>
 
@@ -46,7 +55,7 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              className="text-sm font-semibold text-gray-900 hover:text-primary transition-colors"
             >
               {link.name}
             </Link>

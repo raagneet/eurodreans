@@ -7,11 +7,13 @@ export function DashboardPreviewSection() {
   return (
     <section className="relative py-24 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight">
             Complete <span className="text-gradient">Transparency.</span>
           </h2>
-          <p className="text-gray-600 text-lg">Track your entire application progress from Day 1 securely via our private student dashboard.</p>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto font-medium">
+            Track your entire application progress from Day 1 securely via our private student dashboard. No more guessing games.
+          </p>
         </div>
 
         <div className="relative mx-auto max-w-4xl rounded-2xl glass-card overflow-hidden shadow-2xl shadow-primary/20 border-white/10">

@@ -11,39 +11,75 @@ function DesignerBadge() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+    setMousePos({ x, y });
   };
 
   return (
     <div 
-      className="relative flex items-center justify-center p-2 mt-4 md:mt-0"
+      className="relative flex items-center justify-center p-4 cursor-none"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        setMousePos({ x: 0, y: 0 });
+      }}
     >
       <motion.div
-        className="relative flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/5 bg-white/5 overflow-hidden cursor-none z-10"
-        whileHover={{ scale: 1.05, borderColor: "rgba(59,130,246,0.5)", backgroundColor: "rgba(59,130,246,0.1)" }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        animate={{
+          x: mousePos.x,
+          y: mousePos.y,
+          rotateX: -mousePos.y * 0.1,
+          rotateY: mousePos.x * 0.1,
+        }}
+        transition={{ type: "spring", stiffness: 80, damping: 25, mass: 1 }}
+        className="relative perspective-distant group"
       >
-        <span className="text-gray-400 font-mono text-xs tracking-wider z-10 relative">
-          Designer <strong className="text-primary group-hover:text-white transition-colors duration-300">@NEET</strong>
-        </span>
-
-        {/* Dynamic Footprint that follows the exact mouse position over the button */}
         <motion.div
-          animate={{
-            x: mousePos.x - 10, // Center pointer offset
-            y: mousePos.y - 10,
-            opacity: isHovering ? 1 : 0,
-            scale: isHovering ? 1 : 0.5,
-            rotate: isHovering ? (mousePos.x > 50 ? 15 : -15) : 0, // slight tilt based on X position
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="absolute pointer-events-none text-accent"
+          className="relative flex items-center gap-2 px-4 py-1.5 rounded-lg border border-white/5 bg-black/40 backdrop-blur-xl overflow-hidden z-20 shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-primary/10"
         >
-          <Footprints size={20} className="drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+          {/* Main Label with Chromatic Aberration on Hover */}
+          <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] font-bold">
+            <span className="relative z-10 text-gray-400 group-hover:text-white transition-colors duration-300">
+               Design <span className="text-emerald-500 italic">@NEET</span>
+            </span>
+            
+            {/* Red Shift */}
+            <motion.span 
+              animate={{ x: isHovering ? 2 : 0, opacity: isHovering ? 0.5 : 0 }}
+              className="absolute inset-0 text-emerald-800 z-0 pointer-events-none"
+            >
+               Design @NEET
+            </motion.span>
+            
+            {/* Blue Shift */}
+            <motion.span 
+              animate={{ x: isHovering ? -2 : 0, opacity: isHovering ? 0.5 : 0 }}
+              className="absolute inset-0 text-emerald-700 z-0 pointer-events-none"
+            >
+               Design @NEET
+            </motion.span>
+          </div>
+
+          {/* Liquid Scanline Effect */}
+          <motion.div 
+            animate={{ x: isHovering ? ["-100%", "200%"] : "-100%" }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent skew-x-12"
+          />
         </motion.div>
+
+        {/* Trail / Ghost Effect */}
+        <motion.div 
+          animate={{
+            x: mousePos.x * 0.5,
+            y: mousePos.y * 0.5,
+            opacity: isHovering ? 0.2 : 0,
+            scale: isHovering ? 1.1 : 1
+          }}
+          className="absolute inset-0 bg-primary/30 blur-xl rounded-full -z-10"
+        />
       </motion.div>
     </div>
   );
@@ -55,14 +91,23 @@ export function Footer() {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 border-b border-white/5 pb-12">
            <div className="col-span-1 md:col-span-2">
-             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4 block">
-                Eurodreams
-             </span>
-             <p className="text-gray-400 max-w-sm mb-6">
+              <div className="flex items-center gap-3 mb-6 group">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]">
+                  <div className="absolute inset-0 rounded-xl bg-white/30 blur-sm mix-blend-overlay"></div>
+                  <svg className="relative w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <span className="text-3xl md:text-4xl font-black tracking-tighter">
+                  <span className="text-white drop-shadow-sm">Euro</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 drop-shadow-sm">dreams</span>
+                </span>
+              </div>
+             <p className="text-gray-300 max-w-sm mb-6">
                 Your trusted partner for securing 100% scholarships to study in Italy's top public universities.
              </p>
              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-primary hover:bg-white/10 transition-all">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:text-primary hover:bg-white/10 transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-primary hover:bg-white/10 transition-all">

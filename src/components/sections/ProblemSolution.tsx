@@ -21,32 +21,37 @@ export function ProblemSolutionSection() {
   return (
     <section className="relative py-24 bg-background border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
-            Studying in Italy is hard. <br className="hidden md:block"/>
-            <span className="text-gray-600">With Eurodreams,</span>{" "}
-            <span className="text-gradient">it&apos;s a breeze.</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-xs font-black tracking-widest text-rose-600 uppercase mb-6">The Problem We Solve</div>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight leading-tight">
+            <span className="text-slate-900">Studying in Italy is hard.</span><br />
+            <span className="text-slate-400 font-bold">With Eurodreams, </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">it&apos;s a breeze.</span>
           </h2>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium leading-relaxed">
+            We turn a complex, bureaucratic nightmare into a smooth, guaranteed journey to your dream university.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center relative">
           
           {/* Left Column: Problems */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gray-500 mb-6 px-4">
-              The Old Way (Painful)
+            <h3 className="text-base font-black text-rose-400 mb-6 px-4 uppercase tracking-widest">
+              ✕ The Old Way (Painful)
             </h3>
             {problems.map((problem, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex items-center gap-4 glass-card p-5 border-red-900/30 bg-red-950/10"
+                initial={{ opacity: 0, x: -40, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 60 }}
+                whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(225,29,72,0.15)" }}
+                className="flex items-center gap-4 glass-card p-5 border border-red-100 bg-red-50/50 shadow-md shadow-red-900/5 transition-all"
               >
                 <XCircle className="text-red-500 shrink-0" size={28} />
-                <p className="text-gray-700 font-medium">{problem}</p>
+                <p className="text-slate-700 font-semibold">{problem}</p>
               </motion.div>
             ))}
           </div>
@@ -62,20 +67,21 @@ export function ProblemSolutionSection() {
 
           {/* Right Column: Solutions */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6 px-4">
-              The Eurodreams Way
+            <h3 className="text-base font-black text-emerald-500 mb-6 px-4 uppercase tracking-widest">
+              ✓ The Eurodreams Way
             </h3>
             {solutions.map((solution, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex items-center gap-4 glass-card p-5 border-primary/30 bg-blue-50/50 hover:bg-blue-100 transition-colors"
+                initial={{ opacity: 0, x: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 60 }}
+                whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(16,185,129,0.15)" }}
+                className="flex items-center gap-4 glass-card p-5 border border-emerald-100 bg-emerald-50/50 shadow-md shadow-emerald-900/5 transition-all"
               >
                 <CheckCircle2 className="text-green-500 shrink-0" size={28} />
-                <p className="text-gray-900 font-semibold">{solution}</p>
+                <p className="text-slate-700 font-semibold">{solution}</p>
               </motion.div>
             ))}
           </div>
