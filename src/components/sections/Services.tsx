@@ -32,7 +32,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="programs" className="relative py-24 bg-background">
+    <section id="programs" className="relative py-24 bg-transparent">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-black tracking-widest text-blue-600 uppercase mb-6">Our Services</div>

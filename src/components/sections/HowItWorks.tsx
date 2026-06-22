@@ -26,7 +26,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section id="process" className="relative py-24 bg-background">
+    <section id="process" className="relative py-24 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-black tracking-widest text-indigo-600 uppercase mb-6">How It Works</div>

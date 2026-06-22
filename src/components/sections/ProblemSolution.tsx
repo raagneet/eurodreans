@@ -19,13 +19,17 @@ export function ProblemSolutionSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-background border-y border-white/5 overflow-hidden">
+    <section className="relative py-24 bg-transparent border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-xs font-black tracking-widest text-rose-600 uppercase mb-6">The Problem We Solve</div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight leading-tight">
             <span className="text-slate-900">Studying in Italy is hard.</span><br />
-            <span className="text-slate-400 font-bold">With Eurodreams, </span>
+            <span className="text-slate-400 font-bold">With </span>
+            <span className="relative inline-block px-3 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20 mx-1 -rotate-1">
+              <span className="text-white font-black tracking-wide">Eurodreams</span>
+            </span>
+            <span className="text-slate-400 font-bold">, </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">it&apos;s a breeze.</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium leading-relaxed">

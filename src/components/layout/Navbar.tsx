@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
 export function Navbar() {
-  const { openLogin, openBookCall } = useModal();
+  const { openBookCall } = useModal();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const { scrollY } = useScroll();
@@ -18,10 +19,11 @@ export function Navbar() {
   });
 
   const navLinks = [
-    { name: "Scholarships", href: "#scholarships" },
-    { name: "Programs", href: "#programs" },
-    { name: "Process", href: "#process" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Italy", href: "/italy" },
+    { name: "Requirements", href: "/requirements" },
+    { name: "Courses", href: "/courses" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "About Us", href: "/about" },
   ];
 
   return (
@@ -29,24 +31,27 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm" : "bg-transparent"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300 rounded-2xl ${
+        isScrolled ? "bg-white/90 backdrop-blur-md border border-slate-200/50 shadow-lg shadow-slate-200/20" : "bg-white/50 backdrop-blur-sm border border-white/20"
       }`}
     >
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          {/* Custom Modern Logo Mark */}
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]">
-            <div className="absolute inset-0 rounded-xl bg-white/30 blur-sm mix-blend-overlay"></div>
-            <svg className="relative w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          {/* Typography */}
-          <span className="text-2xl md:text-[28px] font-black tracking-tighter">
-            <span className="text-slate-900 drop-shadow-sm">Euro</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 drop-shadow-sm">dreams</span>
-          </span>
+      <div className="px-6 h-16 flex items-center justify-between">
+        <Link href="/#hero" className="flex items-center group">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="relative h-12 w-auto"
+          >
+            <Image
+              src="/Logo-Euro-dreams-1536x410.png"
+              alt="Eurodreams Logo"
+              width={180}
+              height={48}
+              priority
+              style={{ width: 'auto' }}
+              className="h-full object-contain"
+            />
+          </motion.div>
         </Link>
 
         {/* Desktop Nav */}
@@ -63,10 +68,16 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" className="text-gray-600 hover:text-primary" onClick={openLogin}>
-            Log in
-          </Button>
-          <Button variant="gradient" onClick={openBookCall}>Book Free Call</Button>
+          <motion.a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSelWs6zYK01AKTnSAVMYb7CH5q-x6MEJKH13xANbdBwnSbCGw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium h-11 px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 shadow-lg"
+          >
+            Book Free Call
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
@@ -97,12 +108,17 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100">
-              <Button variant="ghost" className="justify-start px-2 text-gray-600" onClick={() => { setMobileMenuOpen(false); openLogin(); }}>
-                Log in
-              </Button>
-              <Button variant="gradient" className="w-full" onClick={() => { setMobileMenuOpen(false); openBookCall(); }}>
+              <motion.a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSelWs6zYK01AKTnSAVMYb7CH5q-x6MEJKH13xANbdBwnSbCGw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium h-11 px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 shadow-lg"
+              >
                 Book Free Call
-              </Button>
+              </motion.a>
             </div>
           </div>
         </motion.div>
