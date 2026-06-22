@@ -59,7 +59,7 @@ export function WhyStudyInItalySection() {
 
   const itemVariants: any = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120, damping: 20 } },
   };
 
   return (
@@ -73,7 +73,7 @@ export function WhyStudyInItalySection() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-black tracking-widest text-blue-600 uppercase mb-6"
           >
             Discover the Opportunity
@@ -81,7 +81,7 @@ export function WhyStudyInItalySection() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900"
           >
@@ -90,7 +90,7 @@ export function WhyStudyInItalySection() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ delay: 0.2 }}
             className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed"
           >
@@ -102,7 +102,7 @@ export function WhyStudyInItalySection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.05 }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {reasons.map((reason, index) => (

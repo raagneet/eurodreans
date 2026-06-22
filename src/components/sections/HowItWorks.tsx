@@ -45,7 +45,7 @@ export function HowItWorksSection() {
              <motion.div 
                initial={{ width: 0 }}
                whileInView={{ width: "100%" }}
-               viewport={{ once: true, margin: "-100px" }}
+               viewport={{ once: true, amount: 0.05 }}
                transition={{ duration: 1.5, ease: "easeInOut" }}
                className="h-full bg-gradient-to-r from-primary via-secondary to-accent" 
              />
@@ -56,7 +56,7 @@ export function HowItWorksSection() {
              <motion.div 
                initial={{ height: 0 }}
                whileInView={{ height: "100%" }}
-               viewport={{ once: true, margin: "-100px" }}
+               viewport={{ once: true, amount: 0.05 }}
                transition={{ duration: 2, ease: "easeInOut" }}
                className="w-full bg-gradient-to-b from-primary via-secondary to-accent" 
              />
@@ -68,8 +68,8 @@ export function HowItWorksSection() {
                 key={idx}
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: idx * 0.2, type: "spring", stiffness: 60 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 120, damping: 20 }}
                 whileHover={{ y: -10, boxShadow: "0 20px 60px -15px rgba(37,99,235,0.15)" }}
                 className="flex flex-col items-center text-center p-8 rounded-3xl bg-white/50 border border-blue-50 hover:bg-white hover:border-blue-100 transition-all duration-300 shadow-md shadow-blue-900/5"
               >

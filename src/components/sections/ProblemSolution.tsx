@@ -49,8 +49,8 @@ export function ProblemSolutionSection() {
                 key={idx}
                 initial={{ opacity: 0, x: -40, scale: 0.95 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 60 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.4, delay: idx * 0.05, type: "spring", stiffness: 120, damping: 20 }}
                 whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(225,29,72,0.15)" }}
                 className="flex items-center gap-4 glass-card p-5 border border-red-100 bg-red-50/50 shadow-md shadow-red-900/5 transition-all"
               >
@@ -79,8 +79,8 @@ export function ProblemSolutionSection() {
                 key={idx}
                 initial={{ opacity: 0, x: 40, scale: 0.95 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 60 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.4, delay: idx * 0.05, type: "spring", stiffness: 120, damping: 20 }}
                 whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(16,185,129,0.15)" }}
                 className="flex items-center gap-4 glass-card p-5 border border-emerald-100 bg-emerald-50/50 shadow-md shadow-emerald-900/5 transition-all"
               >

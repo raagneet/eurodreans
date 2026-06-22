@@ -13,7 +13,7 @@ interface CounterProps {
 function AnimatedCounter({ end, suffix = "", duration = 2 }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   useEffect(() => {
     if (isInView) {
@@ -49,7 +49,7 @@ export function SocialProofSection() {
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-24 glass-card p-6 sm:p-8 border border-blue-100 shadow-[0_20px_50px_-12px_rgba(37,99,235,0.1)] bg-white/60 backdrop-blur-md rounded-3xl"
         >

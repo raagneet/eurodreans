@@ -51,8 +51,8 @@ export function ServicesSection() {
               key={idx}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: service.delay, type: "spring", stiffness: 50 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.5, delay: service.delay, type: "spring", stiffness: 120, damping: 20 }}
               whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(37,99,235,0.2)" }}
               className="glass-card p-8 flex flex-col h-full bg-white/60 hover:bg-white border border-blue-50 hover:border-blue-200 transition-all duration-300 shadow-lg shadow-blue-900/5"
             >

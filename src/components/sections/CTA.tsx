@@ -18,8 +18,8 @@ export function CTASection() {
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, type: "spring", stiffness: 40 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.5, type: "spring", stiffness: 120, damping: 20 }}
           className="glass-card p-8 md:p-24 relative overflow-hidden border border-blue-100 shadow-[0_40px_80px_-20px_rgba(37,99,235,0.2)] bg-white/80 backdrop-blur-2xl rounded-[3rem]"
         >
            {/* Abstract background shapes */}

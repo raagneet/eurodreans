@@ -21,7 +21,7 @@ export function TestimonialsSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 tracking-tight"
           >
             Students Success Stories
@@ -34,7 +34,7 @@ export function TestimonialsSection() {
               key={test.id}
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.2)" }}
               className="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group"

@@ -30,7 +30,7 @@ export function LeadMagnetSection() {
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             className="lg:col-span-5 flex flex-col items-center"
           >
             <div className="relative w-full max-w-[320px] group">
@@ -73,7 +73,7 @@ export function LeadMagnetSection() {
           <motion.div 
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             className="lg:col-span-7 w-full h-full"
           >
             <div className="bg-white/90 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 shadow-xl shadow-blue-900/5 border border-white h-full flex flex-col justify-center relative overflow-hidden">

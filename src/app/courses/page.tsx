@@ -115,7 +115,7 @@ export default function CoursesPage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           className="mb-16"
         >
           <div className="flex items-center justify-between mb-8 border-b border-slate-200 pb-4">
@@ -157,7 +157,7 @@ export default function CoursesPage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           className="mb-10"
         >
           <div className="flex items-center justify-between mb-8 border-b border-slate-200 pb-4">
