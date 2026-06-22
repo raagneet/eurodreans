@@ -68,7 +68,16 @@ export default function CoursesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-500/30 overflow-hidden pt-24 pb-20 relative font-sans">
+    <div className="min-h-screen bg-slate-50/50 text-slate-900 selection:bg-blue-500/30 overflow-hidden pt-24 pb-20 relative font-sans">
+
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#f8fafc_0%,#f1f5f9_100%)]" />
+        <div className="absolute -top-[10%] -right-[15%] w-[55vw] h-[55vw] rounded-full bg-blue-200/40 blur-[130px] mix-blend-multiply" />
+        <div className="absolute bottom-[5%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-indigo-200/40 blur-[120px] mix-blend-multiply" />
+        <div className="absolute top-[40%] right-[10%] w-[35vw] h-[35vw] rounded-full bg-cyan-200/30 blur-[100px] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent_80%)]" />
+      </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
@@ -123,7 +132,7 @@ export default function CoursesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {featuredPrograms.map((course, idx) => (
-              <div key={idx} className="group relative bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <div key={idx} className="group relative bg-white/75 backdrop-blur-md rounded-2xl p-5 border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
                 <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${getGradient(idx)} opacity-50 group-hover:opacity-100 transition-opacity`} />
                 <div className="flex items-start gap-4 pl-2">
                   <div className="mt-1 shrink-0">
@@ -165,7 +174,7 @@ export default function CoursesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {specializedPrograms.map((course, idx) => (
-              <div key={idx} className="group relative bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <div key={idx} className="group relative bg-white/75 backdrop-blur-md rounded-2xl p-5 border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
                 <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${getGradient(idx + 3)} opacity-50 group-hover:opacity-100 transition-opacity`} />
                 <div className="flex items-start gap-4 pl-2">
                   <div className="mt-1 shrink-0">

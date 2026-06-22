@@ -19,8 +19,17 @@ export default function ItalyPage() {
   ];
 
   return (
-    <div className="h-screen overflow-y-auto hide-scrollbar bg-white text-slate-900 pt-28 pb-12 font-sans flex flex-col">
-      <div className="container mx-auto px-4 sm:px-6 max-w-[95%] 2xl:max-w-[1600px] w-full flex flex-col lg:flex-row gap-8 xl:gap-12 flex-1">
+    <div className="h-screen overflow-y-auto hide-scrollbar bg-slate-50/50 text-slate-900 pt-28 pb-12 font-sans flex flex-col relative">
+
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#f8fafc_0%,#f1f5f9_100%)]" />
+        <div className="absolute -top-[10%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-blue-200/30 blur-[120px] mix-blend-multiply" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-indigo-200/30 blur-[120px] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-25" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 max-w-[95%] 2xl:max-w-[1600px] w-full flex flex-col lg:flex-row gap-8 xl:gap-12 flex-1 relative z-10">
         
         {/* Left Column: Title & Navigation */}
         <div className="lg:w-[30%] xl:w-1/4 flex flex-col gap-6 shrink-0 relative">
@@ -52,7 +61,7 @@ export default function ItalyPage() {
 
         {/* Sidebar Navigation */}
         <div className="sticky top-28 z-10 flex flex-col">
-          <div className="glass-card rounded-2xl p-4 border border-slate-100 bg-white/80 shadow-lg shadow-slate-200/50 hidden lg:flex flex-col">
+          <div className="glass-card rounded-2xl p-4 border border-white/60 bg-white/70 backdrop-blur-lg shadow-lg shadow-slate-200/30 hidden lg:flex flex-col">
             <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 px-3">Contents</h3>
             <nav className="flex flex-col gap-1">
                 {sections.map((section) => (
@@ -114,7 +123,7 @@ export default function ItalyPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
               >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -157,7 +166,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] group-hover:bg-indigo-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -204,7 +213,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-[80px] group-hover:bg-purple-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -242,7 +251,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 rounded-full blur-[80px] group-hover:bg-pink-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -289,7 +298,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[80px] group-hover:bg-emerald-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -325,7 +334,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-[80px] group-hover:bg-cyan-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -368,7 +377,7 @@ export default function ItalyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 xl:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 xl:p-10 border border-white shadow-xl shadow-slate-200/30 relative group absolute inset-0 overflow-y-auto hide-scrollbar"
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/5 rounded-full blur-[80px] group-hover:bg-sky-500/10 transition-colors duration-700 pointer-events-none" />
                   <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
