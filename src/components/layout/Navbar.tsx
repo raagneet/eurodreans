@@ -31,11 +31,11 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300 rounded-2xl ${
-        isScrolled ? "bg-white/90 backdrop-blur-md border border-slate-200/50 shadow-lg shadow-slate-200/20" : "bg-white/50 backdrop-blur-sm border border-white/20"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
+        isScrolled ? "bg-white/90 backdrop-blur-md border-slate-200/50 shadow-md shadow-slate-200/10" : "bg-white/40 backdrop-blur-sm border-white/10"
       }`}
     >
-      <div className="px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto w-full px-6 h-16 flex items-center justify-between">
         <Link href="/#hero" className="flex items-center group">
           <motion.div
             whileHover={{ scale: 1.05 }}
