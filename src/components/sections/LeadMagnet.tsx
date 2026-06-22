@@ -46,6 +46,7 @@ export function LeadMagnetSection() {
                    alt="Dipanshu Chouhan" 
                    fill
                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                   sizes="(max-width: 768px) 100vw, 320px"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
               </div>

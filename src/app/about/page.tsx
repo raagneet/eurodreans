@@ -289,6 +289,7 @@ export default function AboutPage() {
                   alt="Eurodreams Our Story"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 500px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent pointer-events-none" />
                 

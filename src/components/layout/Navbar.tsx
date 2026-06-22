@@ -48,7 +48,7 @@ export function Navbar() {
               width={180}
               height={48}
               priority
-              style={{ width: 'auto' }}
+              style={{ width: 'auto', height: 'auto' }}
               className="h-full object-contain"
             />
           </motion.div>

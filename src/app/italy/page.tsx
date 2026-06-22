@@ -142,7 +142,7 @@ export default function ItalyPage() {
                     </div>
                     <div className="xl:w-2/5 w-full shrink-0">
                       <div className="relative w-full h-64 xl:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg border border-slate-100/50">
-                        <Image src="/images/italy/about_italy.png" alt="Colosseum in Rome, Italy" fill className="object-cover" />
+                        <Image src="/images/italy/about_italy.png" alt="Colosseum in Rome, Italy" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export default function ItalyPage() {
                     </div>
                     <div className="xl:w-2/5 w-full shrink-0">
                       <div className="relative w-full h-64 xl:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg border border-slate-100/50">
-                        <Image src="/images/italy/student_life_italy.png" alt="Students studying in an Italian campus" fill className="object-cover" />
+                        <Image src="/images/italy/student_life_italy.png" alt="Students studying in an Italian campus" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
                     </div>
@@ -227,7 +227,7 @@ export default function ItalyPage() {
                     </div>
                     <div className="xl:w-2/5 w-full shrink-0">
                       <div className="relative w-full h-64 xl:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg border border-slate-100/50">
-                        <Image src="/images/italy/nightlife_italy.png" alt="Italian nightlife and cafes" fill className="object-cover" />
+                        <Image src="/images/italy/nightlife_italy.png" alt="Italian nightlife and cafes" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
                     </div>
@@ -274,7 +274,7 @@ export default function ItalyPage() {
                     </div>
                     <div className="xl:w-2/5 w-full shrink-0">
                       <div className="relative w-full h-64 xl:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg border border-slate-100/50">
-                        <Image src="/images/italy/shopping_italy.png" alt="Shopping street in Milan, Italy" fill className="object-cover" />
+                        <Image src="/images/italy/shopping_italy.png" alt="Shopping street in Milan, Italy" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
                     </div>
@@ -310,7 +310,7 @@ export default function ItalyPage() {
                     </div>
                     <div className="xl:w-2/5 w-full shrink-0">
                       <div className="relative w-full h-64 xl:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg border border-slate-100/50">
-                        <Image src="/images/italy/culture_italy.png" alt="Italian food and culture" fill className="object-cover" />
+                        <Image src="/images/italy/culture_italy.png" alt="Italian food and culture" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
                     </div>

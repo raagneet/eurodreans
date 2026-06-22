@@ -154,7 +154,7 @@ export function HeroSection() {
                 "/thumbnails/student3.png",
               ].map((src, i) => (
                 <div key={i} className="w-10 h-10 rounded-full border-2 border-white/20 bg-white/10 overflow-hidden relative">
-                  <Image src={src} alt="student" fill className="object-cover" />
+                  <Image src={src} alt="student" fill className="object-cover" sizes="40px" />
                 </div>
               ))}
               <div className="w-10 h-10 rounded-full border-2 border-white/20 bg-violet-500/30 flex items-center justify-center text-[10px] font-bold text-white z-10">
@@ -192,6 +192,7 @@ export function HeroSection() {
                   alt="Italian Education Campus"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
               </motion.div>
@@ -221,6 +222,7 @@ export function HeroSection() {
                   alt="Students in Italy"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 35vw"
                 />
               </motion.div>
             </AnimatePresence>

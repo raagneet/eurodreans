@@ -33,7 +33,8 @@ export function Footer() {
                 alt="Eurodreams Logo"
                 width={130}
                 height={34}
-                className="h-6 w-auto object-contain"
+                style={{ width: 'auto', height: 'auto' }}
+                className="h-6 object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed mb-4 text-slate-500">
