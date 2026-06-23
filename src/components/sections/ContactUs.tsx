@@ -14,7 +14,7 @@ export function ContactUsSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.interest || !formData.message) {
       alert("Please fill in all fields.");
@@ -23,24 +23,27 @@ export function ContactUsSection() {
 
     setIsSubmitting(true);
 
-    // Simulate submission and write to localStorage
-    setTimeout(() => {
-      try {
-        const existingEnquiries = JSON.parse(localStorage.getItem("contact_enquiries") || "[]");
-        const newEnquiry = {
-          ...formData,
-          id: Date.now().toString(),
-          date: new Date().toLocaleString()
-        };
-        localStorage.setItem("contact_enquiries", JSON.stringify([newEnquiry, ...existingEnquiries]));
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", interest: "", message: "" });
-      } catch (err) {
-        console.error("Failed to save enquiry:", err);
-      } finally {
-        setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit enquiry.");
       }
-    }, 800);
+
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", interest: "", message: "" });
+    } catch (err) {
+      console.error("Failed to save enquiry:", err);
+      alert("Something went wrong while submitting your enquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

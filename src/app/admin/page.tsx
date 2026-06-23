@@ -55,17 +55,22 @@ export default function AdminPage() {
     }
   }, []);
 
+  const fetchEnquiries = async () => {
+    try {
+      const res = await fetch("/api/enquiries");
+      if (res.ok) {
+        const data = await res.json();
+        setEnquiries(data);
+      }
+    } catch (err) {
+      console.error("Failed to load enquiries from API:", err);
+    }
+  };
+
   // Load enquiries if logged in
   useEffect(() => {
     if (isLoggedIn) {
-      const data = localStorage.getItem("contact_enquiries");
-      if (data) {
-        try {
-          setEnquiries(JSON.parse(data));
-        } catch (err) {
-          console.error("Failed to parse enquiries", err);
-        }
-      }
+      fetchEnquiries();
     }
   }, [isLoggedIn]);
 
@@ -108,23 +113,41 @@ export default function AdminPage() {
   const scholarshipCount = enquiries.filter(e => e.interest === "scholarship").length;
 
   // Clear all enquiries confirm
-  const confirmClearAll = () => {
-    localStorage.removeItem("contact_enquiries");
-    setEnquiries([]);
-    setSelectedEnquiry(null);
-    setShowClearConfirm(false);
+  const confirmClearAll = async () => {
+    try {
+      const res = await fetch("/api/enquiries?clearAll=true", {
+        method: "DELETE"
+      });
+      if (res.ok) {
+        setEnquiries([]);
+        setSelectedEnquiry(null);
+      }
+    } catch (err) {
+      console.error("Failed to clear enquiries:", err);
+    } finally {
+      setShowClearConfirm(false);
+    }
   };
 
   // Delete individual enquiry confirm
-  const confirmDeleteIndividual = () => {
+  const confirmDeleteIndividual = async () => {
     if (showDeleteConfirmId) {
-      const updated = enquiries.filter(item => item.id !== showDeleteConfirmId);
-      localStorage.setItem("contact_enquiries", JSON.stringify(updated));
-      setEnquiries(updated);
-      if (selectedEnquiry?.id === showDeleteConfirmId) {
-        setSelectedEnquiry(null);
+      try {
+        const res = await fetch(`/api/enquiries?id=${showDeleteConfirmId}`, {
+          method: "DELETE"
+        });
+        if (res.ok) {
+          const updated = enquiries.filter(item => item.id !== showDeleteConfirmId);
+          setEnquiries(updated);
+          if (selectedEnquiry?.id === showDeleteConfirmId) {
+            setSelectedEnquiry(null);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to delete enquiry:", err);
+      } finally {
+        setShowDeleteConfirmId(null);
       }
-      setShowDeleteConfirmId(null);
     }
   };
 

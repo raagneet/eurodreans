@@ -174,8 +174,8 @@ export default function FreeResourcesPage() {
           </motion.p>
         </div>
 
-        {/* 4-Card Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16 max-w-7xl">
+        {/* Vertical Stack Layout */}
+        <div className="flex flex-col gap-6 w-full mb-16 max-w-4xl">
           {resources.map((resource, index) => (
             <motion.div
               key={index}
@@ -183,36 +183,43 @@ export default function FreeResourcesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, type: "spring", stiffness: 60, damping: 15 }}
               onClick={() => handleOpenModal(resource)}
-              className="relative bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group flex flex-col h-full cursor-pointer"
+              className="relative bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 overflow-hidden group flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer"
             >
               {/* Dynamic Gradient Blob Background */}
-              <div className={`absolute -top-10 -right-10 w-20 h-20 rounded-full bg-gradient-to-br ${resource.color} blur-[25px] group-hover:scale-150 transition-transform duration-700 ease-out`} />
+              <div className={`absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br ${resource.color} blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out`} />
 
-              {/* Icon & Title Header */}
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <div className="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-white transition-all duration-300">
-                  {resource.icon}
+              {/* Left Column: Info */}
+              <div className="flex-1 relative z-10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+                    {resource.icon}
+                  </div>
+                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    Download Guide
+                  </span>
                 </div>
-                <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Download Guide
-                </span>
+
+                <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                  {resource.title}
+                </h3>
+
+                <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed max-w-xl">
+                  {resource.description}
+                </p>
               </div>
 
-              <h3 className="text-base font-extrabold text-slate-900 leading-snug mb-2 relative z-10 group-hover:text-blue-600 transition-colors">
-                {resource.title}
-              </h3>
+              {/* Divider */}
+              <div className="h-px w-full bg-slate-100 md:hidden relative z-10" />
+              <div className="hidden md:block w-px h-24 bg-slate-100 shrink-0 relative z-10" />
 
-              <p className="text-slate-500 text-xs font-medium leading-relaxed mb-4 relative z-10">
-                {resource.description}
-              </p>
-
-              {/* Features List */}
-              <div className="relative z-10 mt-auto pt-2">
-                <ul className="space-y-2">
+              {/* Right Column: Features */}
+              <div className="w-full md:w-[350px] shrink-0 relative z-10 md:pl-2">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">What's Inside:</h4>
+                <ul className="space-y-2.5">
                   {resource.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
-                      <span className="text-slate-600 text-[11px] font-semibold leading-snug">
+                    <li key={fIndex} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-blue-500 shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-xs md:text-sm font-semibold leading-snug">
                         {feature}
                       </span>
                     </li>
