@@ -33,7 +33,6 @@ export function TestimonialsSection() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-blue-300/30 blur-[150px]" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-indigo-300/20 blur-[150px]" />
-        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-multiply" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-8 max-w-[1400px] relative z-10">
