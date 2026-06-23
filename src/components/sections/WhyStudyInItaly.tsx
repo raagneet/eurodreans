@@ -20,63 +20,63 @@ export function WhyStudyInItalySection() {
       title: "FREE EDUCATION",
       description: "To all International Students.",
       icon: GraduationCap,
-      color: "bg-sky-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-sky-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf4fc] border-[#d1e6f7]",
+      iconColor: "text-sky-600 bg-white",
     },
     {
       title: "GUARANTEED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
-      color: "bg-emerald-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-emerald-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf5eb] border-[#d2ecd5]",
+      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "EASIER ROI",
       subtitle: "(RETURN ON INVESTMENT)",
       description: "With the help of scholarships",
       icon: TrendingUp,
-      color: "bg-emerald-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-emerald-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf5eb] border-[#d2ecd5]",
+      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "PART-TIME JOB",
       subtitle: "OPPORTUNITIES",
       description: "20 Hours per week",
       icon: Clock,
-      color: "bg-orange-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-orange-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#fef1e5] border-[#fce0c7]",
+      iconColor: "text-orange-600 bg-white",
     },
     {
       title: "1-YEAR POST-STUDY",
       subtitle: "VISA",
       description: "Permission to stay and work",
       icon: CalendarCheck,
-      color: "bg-sky-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-sky-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf4fc] border-[#d1e6f7]",
+      iconColor: "text-sky-600 bg-white",
     },
     {
       title: "PERMANENT",
       subtitle: "RESIDENCY",
       description: "After 5 years of stay in Italy",
       icon: Home,
-      color: "bg-emerald-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-emerald-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf5eb] border-[#d2ecd5]",
+      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "ATTRACTIVE",
       subtitle: "SALARY",
       description: "Depends on Job Profile (~₹3-4+ Lakhs/Month Easily)",
       icon: Banknote,
-      color: "bg-emerald-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-emerald-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#eaf5eb] border-[#d2ecd5]",
+      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "TRAVEL ACROSS",
       subtitle: "EUROPE",
       description: "(Schengen Visa access)",
       icon: Plane,
-      color: "bg-orange-100/40 backdrop-blur-xl border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
-      iconColor: "text-orange-600 bg-white/80 backdrop-blur-sm shadow-sm",
+      color: "bg-[#fef1e5] border-[#fce0c7]",
+      iconColor: "text-orange-600 bg-white",
     },
   ];
 
@@ -94,24 +94,19 @@ export function WhyStudyInItalySection() {
   };
 
   return (
-    <section className="relative py-20 bg-slate-50/50 overflow-hidden">
-      {/* Glassmorphism Ambient Glows */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-300/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-orange-300/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-
+    <section className="relative py-20 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16 relative">
-          {/* Top Decorative Border */}
-          <div className="absolute top-1/2 left-0 w-full h-[3px] bg-slate-200/50 -z-10 hidden md:block"></div>
+          {/* Top Decorative Border (like in image) */}
+          <div className="absolute top-1/2 left-0 w-full h-[3px] bg-slate-200 -z-10 hidden md:block"></div>
           
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/70 backdrop-blur-md rounded-full px-8 py-2 border border-white/60 shadow-sm text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
+            className="inline-block bg-slate-50 px-8 text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
           >
             <span className="text-[#1a3b5c]">WHY STUDY IN </span>
             <span className="text-[#db7023] drop-shadow-sm">ITALY?</span>
@@ -131,26 +126,28 @@ export function WhyStudyInItalySection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className={`flex flex-col items-center text-center p-6 rounded-2xl border-2 ${card.color} hover:shadow-lg hover:border-white/80 transition-all duration-300 h-full group`}
+              className={`flex flex-col items-center text-center p-6 rounded-2xl border-2 ${card.color} shadow-sm hover:shadow-lg transition-all duration-300 h-full`}
             >
               <div className="mb-6 min-h-[50px] flex flex-col justify-end w-full">
-                <h3 className="font-bold text-slate-900 text-lg md:text-xl leading-tight uppercase group-hover:text-blue-900 transition-colors">
+                <h3 className="font-bold text-slate-900 text-lg md:text-xl leading-tight uppercase">
                   {card.title}
                 </h3>
                 {card.subtitle && (
-                  <h4 className="font-bold text-slate-700 text-sm md:text-base leading-tight uppercase mt-1">
+                  <h4 className="font-bold text-slate-800 text-sm md:text-base leading-tight uppercase mt-1">
                     {card.subtitle}
                   </h4>
                 )}
               </div>
               
-              <div className={`w-20 h-20 flex items-center justify-center rounded-full mb-8 ${card.iconColor} border border-white shrink-0 group-hover:shadow-md transition-all duration-300`}>
+              <div className={`w-20 h-20 flex items-center justify-center rounded-full mb-8 ${card.iconColor} shadow-sm border border-slate-100 shrink-0 group`}>
                 <card.icon size={40} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-300" />
               </div>
               
               <div className="flex items-start gap-2 mt-auto text-left w-full justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1a3b5c] mt-2 shrink-0 group-hover:bg-blue-600 transition-colors"></div>
-                <p className="text-[#1a3b5c] font-medium text-base md:text-lg">
+                {index !== 7 && (
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#1a3b5c] mt-2 shrink-0"></div>
+                )}
+                <p className={`text-[#1a3b5c] font-medium text-base md:text-lg ${index === 7 ? 'text-center -translate-y-3' : ''}`}>
                   {card.description}
                 </p>
               </div>
@@ -166,12 +163,12 @@ export function WhyStudyInItalySection() {
           transition={{ delay: 0.5 }}
           className="mt-14 flex justify-center"
         >
-          <div className="bg-orange-50/70 backdrop-blur-md rounded-full px-6 py-4 md:px-10 md:py-4 flex flex-col sm:flex-row items-center gap-4 shadow-sm border border-white/60 hover:shadow-md hover:bg-orange-50/90 transition-all duration-300">
+          <div className="bg-[#fef1e5] rounded-full px-6 py-4 md:px-10 md:py-4 flex flex-col sm:flex-row items-center gap-4 shadow-md border-2 border-[#fce0c7] hover:shadow-lg transition-shadow duration-300">
             <div className="flex -space-x-2">
-              <div className="w-10 h-10 rounded-full bg-blue-100/90 backdrop-blur-sm flex items-center justify-center border-2 border-white z-10 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-white z-10 shadow-sm">
                 <Globe size={20} className="text-blue-600" />
               </div>
-              <div className="w-10 h-10 rounded-full bg-orange-100/90 backdrop-blur-sm flex items-center justify-center border-2 border-white z-0 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center border-2 border-white z-0 shadow-sm">
                 <MessageCircle size={20} className="text-orange-600" />
               </div>
             </div>
