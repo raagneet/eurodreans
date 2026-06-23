@@ -20,63 +20,47 @@ export function WhyStudyInItalySection() {
       title: "FREE EDUCATION",
       description: "To all International Students.",
       icon: GraduationCap,
-      color: "bg-[#eaf4fc] border-[#d1e6f7]",
-      iconColor: "text-sky-600 bg-white",
     },
     {
       title: "GUARANTEED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
-      color: "bg-[#eaf5eb] border-[#d2ecd5]",
-      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "EASIER ROI",
       subtitle: "(RETURN ON INVESTMENT)",
       description: "With the help of scholarships",
       icon: TrendingUp,
-      color: "bg-[#eaf5eb] border-[#d2ecd5]",
-      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "PART-TIME JOB",
       subtitle: "OPPORTUNITIES",
       description: "20 Hours per week",
       icon: Clock,
-      color: "bg-[#fef1e5] border-[#fce0c7]",
-      iconColor: "text-orange-600 bg-white",
     },
     {
       title: "1-YEAR POST-STUDY",
       subtitle: "VISA",
       description: "Permission to stay and work",
       icon: CalendarCheck,
-      color: "bg-[#eaf4fc] border-[#d1e6f7]",
-      iconColor: "text-sky-600 bg-white",
     },
     {
       title: "PERMANENT",
       subtitle: "RESIDENCY",
       description: "After 5 years of stay in Italy",
       icon: Home,
-      color: "bg-[#eaf5eb] border-[#d2ecd5]",
-      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "ATTRACTIVE",
       subtitle: "SALARY",
       description: "Depends on Job Profile (~₹3-4+ Lakhs/Month Easily)",
       icon: Banknote,
-      color: "bg-[#eaf5eb] border-[#d2ecd5]",
-      iconColor: "text-emerald-600 bg-white",
     },
     {
       title: "TRAVEL ACROSS",
       subtitle: "EUROPE",
-      description: "(Schengen Visa access)",
+      description: "Schengen Visa access",
       icon: Plane,
-      color: "bg-[#fef1e5] border-[#fce0c7]",
-      iconColor: "text-orange-600 bg-white",
     },
   ];
 
@@ -126,28 +110,26 @@ export function WhyStudyInItalySection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className={`flex flex-col items-center text-center p-6 rounded-2xl border-2 ${card.color} shadow-sm hover:shadow-lg transition-all duration-300 h-full`}
+              className="flex flex-col items-center text-center p-7 rounded-[2rem] bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(37,99,235,0.12)] hover:border-blue-100 transition-all duration-300 h-full group"
             >
               <div className="mb-6 min-h-[50px] flex flex-col justify-end w-full">
-                <h3 className="font-bold text-slate-900 text-lg md:text-xl leading-tight uppercase">
+                <h3 className="font-extrabold text-slate-800 text-lg md:text-xl leading-tight uppercase tracking-wide group-hover:text-blue-900 transition-colors duration-300">
                   {card.title}
                 </h3>
                 {card.subtitle && (
-                  <h4 className="font-bold text-slate-800 text-sm md:text-base leading-tight uppercase mt-1">
+                  <h4 className="font-bold text-slate-500 text-sm md:text-base leading-tight uppercase mt-1">
                     {card.subtitle}
                   </h4>
                 )}
               </div>
               
-              <div className={`w-20 h-20 flex items-center justify-center rounded-full mb-8 ${card.iconColor} shadow-sm border border-slate-100 shrink-0 group`}>
-                <card.icon size={40} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-20 h-20 flex items-center justify-center rounded-2xl mb-8 text-blue-600 bg-blue-50/80 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm shrink-0">
+                <card.icon size={36} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500" />
               </div>
               
-              <div className="flex items-start gap-2 mt-auto text-left w-full justify-center">
-                {index !== 7 && (
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1a3b5c] mt-2 shrink-0"></div>
-                )}
-                <p className={`text-[#1a3b5c] font-medium text-base md:text-lg ${index === 7 ? 'text-center -translate-y-3' : ''}`}>
+              <div className="flex items-start gap-2.5 mt-auto text-left w-full justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-[7px] shrink-0"></div>
+                <p className="text-slate-600 font-medium text-base md:text-[17px] leading-snug">
                   {card.description}
                 </p>
               </div>
