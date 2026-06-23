@@ -42,7 +42,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative w-full pt-28 pb-28 lg:pt-36 lg:pb-36 flex flex-col justify-center overflow-hidden bg-slate-900"
+      className="relative w-full pt-20 pb-16 lg:pt-28 lg:pb-20 flex flex-col justify-center overflow-hidden bg-slate-900"
     >
       <EligibilityPopup isOpen={showEligibility} onClose={() => setShowEligibility(false)} />
 
@@ -80,7 +80,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex items-center gap-3 mb-6"
+          className="flex items-center gap-3 mb-4"
         >
           <span className="h-[2px] w-8 bg-orange-600 rounded-full" />
           <span className="text-orange-600 font-extrabold tracking-widest uppercase text-xs sm:text-sm">
@@ -93,7 +93,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1] max-w-3xl"
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1] max-w-3xl"
         >
           Study in{" "}
           <span className="relative inline-block group cursor-pointer">
@@ -119,7 +119,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mb-10 max-w-2xl"
+          className="mb-8 max-w-2xl"
         >
           <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-6">
             Eurodreams is offering FREE ITALIAN and FREE IELTS Classes to all Registered Students.
@@ -148,7 +148,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-start w-full sm:w-auto gap-5 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-start w-full sm:w-auto gap-5 mb-10"
         >
           <button
             onClick={() => setShowEligibility(true)}
