@@ -121,7 +121,10 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg sm:text-xl text-slate-600 font-medium mb-12 max-w-2xl leading-relaxed"
         >
-          We help ambitious students secure fully-funded Master&apos;s admissions in top Italian public institutions. Stop worrying about tuition fees and focus on your future.
+          Eurodreams is offering FREE ITALIAN and FREE IELTS Classes to all Registered Students.
+          <br />
+          <br />
+          Admissions are open for September 2027 Intake
         </motion.p>
 
         {/* Buttons */}
