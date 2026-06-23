@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Star, GraduationCap, ArrowRight, PlayCircle } from "lucide-react";
+import { Star, GraduationCap, ArrowRight, PlayCircle, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { useModal } from "@/context/ModalContext";
 import { EligibilityPopup } from "@/components/ui/EligibilityPopup";
@@ -84,7 +84,7 @@ export function HeroSection() {
         >
           <span className="h-[2px] w-8 bg-orange-600 rounded-full" />
           <span className="text-orange-600 font-extrabold tracking-widest uppercase text-xs sm:text-sm">
-            Your Ambition. Our Expertise. Confirmed Admits
+            INDIA'S LEADING ITALY EDUCATION EXPERTS.
           </span>
         </motion.div>
 
@@ -115,17 +115,33 @@ export function HeroSection() {
         </motion.h1>
 
         {/* Description */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg sm:text-xl text-slate-600 font-medium mb-12 max-w-2xl leading-relaxed"
+          className="mb-10 max-w-2xl"
         >
-          Eurodreams is offering FREE ITALIAN and FREE IELTS Classes to all Registered Students.
-          <br />
-          <br />
-          Admissions are open for September 2027 Intake
-        </motion.p>
+          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-6">
+            Eurodreams is offering FREE ITALIAN and FREE IELTS Classes to all Registered Students.
+            <br />
+            <br />
+            Admissions are open for September 2027 Intake
+          </p>
+
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            {[
+              "Free Education",
+              "€8000 Scholarship",
+              "No Tuition fee",
+              "Top Public Universities"
+            ].map((feature, idx) => (
+              <span key={idx} className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-blue-50/80 border border-blue-200/60 text-blue-700 text-xs sm:text-sm font-bold shadow-sm backdrop-blur-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 shrink-0" />
+                {feature}
+              </span>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Buttons */}
         <motion.div
