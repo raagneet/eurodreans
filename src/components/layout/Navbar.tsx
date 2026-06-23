@@ -25,7 +25,7 @@ export function Navbar() {
   const navLinks = [
     { name: "Courses", href: "/courses" },
     { name: "Scholarship", href: "/italy-scholarships" },
-    { name: "Services", href: "/#programs" },
+    { name: "Services", href: "/services" },
     { name: "Success Stories", href: "/#testimonials" },
     { name: "About Us", href: "/about" },
     { name: "About Italy", href: "/italy" },
