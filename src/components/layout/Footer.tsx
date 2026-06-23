@@ -32,7 +32,7 @@ const offices = [
 
 function DesignerBadge() {
   return (
-    <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500">
+    <div className="flex items-center gap-1.5 text-sm font-medium text-slate-500">
       <span>Designed by</span>
       <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors font-bold">
         @NEET
@@ -65,24 +65,24 @@ export function Footer() {
               <Image
                 src="/Logo-Euro-dreams-1536x410.png"
                 alt="Eurodreams Logo"
-                width={120}
-                height={32}
+                width={140}
+                height={36}
                 style={{ width: 'auto', height: 'auto' }}
-                className="h-5.5 object-contain"
+                className="h-6 object-contain"
               />
             </div>
-            <p className="text-xs leading-relaxed text-slate-500 max-w-sm">
-              <strong className="text-slate-800 block mb-0.5 tracking-wide uppercase text-[10px]">Transforming Dreams Into Reality</strong>
+            <p className="text-sm leading-relaxed text-slate-500 max-w-sm">
+              <strong className="text-slate-800 block mb-0.5 tracking-wide uppercase text-xs">Transforming Dreams Into Reality</strong>
               Your trusted partner for securing 100% scholarships and making your study abroad journey to Italy seamless.
             </p>
             {/* Clean, compact contact strip */}
-            <div className="flex flex-col space-y-2 pt-2 text-xs">
+            <div className="flex flex-col space-y-2 pt-2 text-sm">
               <a href="mailto:info.eurodreamsstudyabroad@gmail.com" className="flex items-center gap-2.5 hover:text-blue-600 transition-colors w-fit text-slate-600 font-medium">
-                <Mail size={13} className="text-blue-600 shrink-0" />
+                <Mail size={16} className="text-blue-600 shrink-0" />
                 <span>info.eurodreamsstudyabroad@gmail.com</span>
               </a>
               <div className="flex items-center gap-2.5 text-slate-600 font-medium">
-                <Phone size={13} className="text-blue-600 shrink-0" />
+                <Phone size={16} className="text-blue-600 shrink-0" />
                 <div className="flex items-center gap-2">
                   <a href="tel:+916267332364" className="hover:text-blue-600 transition-colors">+91 6267332364</a>
                   <span className="text-slate-300">|</span>
@@ -94,11 +94,11 @@ export function Footer() {
 
           {/* Column 2: Navigation (lg:col-span-3) */}
           <div className="lg:col-span-3">
-            <h4 className="text-slate-900 font-bold text-[11px] uppercase tracking-wider mb-4 flex items-center gap-1.5">
-              <Sparkles size={10} className="text-blue-600" />
+            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
+              <Sparkles size={12} className="text-blue-600" />
               Navigation
             </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium">
               {[
                 { label: "Home", href: "/" },
                 { label: "Courses", href: "/courses" },
@@ -118,8 +118,8 @@ export function Footer() {
 
           {/* Column 3: Interactive Location Selector (lg:col-span-4) */}
           <div className="lg:col-span-4">
-            <h4 className="text-slate-900 font-bold text-[11px] uppercase tracking-wider mb-4 flex items-center gap-1.5">
-              <Globe size={10} className="text-blue-600" />
+            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
+              <Globe size={12} className="text-blue-600" />
               Our Offices
             </h4>
             
@@ -129,7 +129,7 @@ export function Footer() {
                 <button
                   key={idx}
                   onClick={() => setActiveOffice(idx)}
-                  className={`px-2.5 py-1 text-[11px] font-semibold rounded-md transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all cursor-pointer ${
                     activeOffice === idx
                       ? "bg-white text-blue-600 shadow-sm border border-slate-200/40"
                       : "text-slate-500 hover:text-slate-800 hover:bg-white/20"
@@ -141,7 +141,7 @@ export function Footer() {
             </div>
 
             {/* Address Panel */}
-            <div className="bg-white/80 border border-slate-200/50 rounded-xl p-3.5 min-h-[90px] flex flex-col justify-between shadow-sm">
+            <div className="bg-white/80 border border-slate-200/50 rounded-xl p-4 min-h-[90px] flex flex-col justify-between shadow-sm">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeOffice}
@@ -149,22 +149,22 @@ export function Footer() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.2 }}
-                  className="text-xs leading-relaxed text-slate-600 flex items-start gap-2.5 font-medium"
+                  className="text-sm leading-relaxed text-slate-600 flex items-start gap-2.5 font-medium"
                 >
-                  <MapPin size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                  <MapPin size={16} className="text-blue-600 shrink-0 mt-0.5" />
                   <span>{offices[activeOffice].address}</span>
                 </motion.div>
               </AnimatePresence>
               
-              <div className="mt-3 pt-2.5 border-t border-slate-100 flex justify-end">
+              <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
                 <a
                   href={offices[activeOffice].mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                  className="text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
                 >
                   <span>View on Map</span>
-                  <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
                 </a>
@@ -174,7 +174,7 @@ export function Footer() {
         </div>
 
         {/* Divider & Bottom bar */}
-        <div className="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
+        <div className="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400 font-medium">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 font-medium">
             <p className="text-slate-500" suppressHydrationWarning>&copy; {new Date().getFullYear()} Eurodreams. All rights reserved.</p>
             <div className="flex items-center gap-4">
@@ -187,10 +187,10 @@ export function Footer() {
             <DesignerBadge />
             <button
               onClick={scrollToTop}
-              className="p-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all border border-slate-200/80 cursor-pointer shadow-sm"
+              className="p-2 rounded-lg bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all border border-slate-200/80 cursor-pointer shadow-sm"
               aria-label="Scroll to top"
             >
-              <ArrowUp size={14} />
+              <ArrowUp size={16} />
             </button>
           </div>
         </div>
