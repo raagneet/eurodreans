@@ -20,63 +20,63 @@ export function WhyStudyInItalySection() {
       title: "FREE EDUCATION",
       description: "To all International Students.",
       icon: GraduationCap,
-      color: "bg-blue-100 border-blue-200",
-      iconColor: "text-blue-700 bg-white",
+      color: "bg-blue-100/50 border-blue-200/50",
+      iconColor: "text-blue-700 bg-white/80",
     },
     {
       title: "GUARANTEED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
-      color: "bg-emerald-100 border-emerald-200",
-      iconColor: "text-emerald-700 bg-white",
+      color: "bg-emerald-100/50 border-emerald-200/50",
+      iconColor: "text-emerald-700 bg-white/80",
     },
     {
       title: "EASIER ROI",
       subtitle: "(RETURN ON INVESTMENT)",
       description: "With the help of scholarships",
       icon: TrendingUp,
-      color: "bg-purple-100 border-purple-200",
-      iconColor: "text-purple-700 bg-white",
+      color: "bg-purple-100/50 border-purple-200/50",
+      iconColor: "text-purple-700 bg-white/80",
     },
     {
       title: "PART-TIME JOB",
       subtitle: "OPPORTUNITIES",
       description: "20 Hours per week",
       icon: Clock,
-      color: "bg-orange-100 border-orange-200",
-      iconColor: "text-orange-700 bg-white",
+      color: "bg-orange-100/50 border-orange-200/50",
+      iconColor: "text-orange-700 bg-white/80",
     },
     {
       title: "1-YEAR POST-STUDY",
       subtitle: "VISA",
       description: "Permission to stay and work",
       icon: CalendarCheck,
-      color: "bg-rose-100 border-rose-200",
-      iconColor: "text-rose-700 bg-white",
+      color: "bg-rose-100/50 border-rose-200/50",
+      iconColor: "text-rose-700 bg-white/80",
     },
     {
       title: "PERMANENT",
       subtitle: "RESIDENCY",
       description: "After 5 years of stay in Italy",
       icon: Home,
-      color: "bg-teal-100 border-teal-200",
-      iconColor: "text-teal-700 bg-white",
+      color: "bg-teal-100/50 border-teal-200/50",
+      iconColor: "text-teal-700 bg-white/80",
     },
     {
       title: "ATTRACTIVE",
       subtitle: "SALARY",
       description: "Depends on Job Profile (~₹3-4+ Lakhs/Month Easily)",
       icon: Banknote,
-      color: "bg-amber-100 border-amber-200",
-      iconColor: "text-amber-700 bg-white",
+      color: "bg-amber-100/50 border-amber-200/50",
+      iconColor: "text-amber-700 bg-white/80",
     },
     {
       title: "TRAVEL ACROSS",
       subtitle: "EUROPE",
       description: "Schengen Visa access",
       icon: Plane,
-      color: "bg-indigo-100 border-indigo-200",
-      iconColor: "text-indigo-700 bg-white",
+      color: "bg-indigo-100/50 border-indigo-200/50",
+      iconColor: "text-indigo-700 bg-white/80",
     },
   ];
 
@@ -95,6 +95,11 @@ export function WhyStudyInItalySection() {
 
   return (
     <section className="relative py-20 bg-slate-50 overflow-hidden">
+      {/* Ambient Orbs for Glassmorphism */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-200/30 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-200/30 rounded-full blur-[100px] pointer-events-none" />
+
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Header */}
@@ -126,7 +131,7 @@ export function WhyStudyInItalySection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className={`flex flex-col items-center text-center p-7 rounded-[2rem] ${card.color} border shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 h-full group`}
+              className={`flex flex-col items-center text-center p-7 rounded-[2rem] ${card.color} border shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 h-full group backdrop-blur-xl`}
             >
               <div className="mb-6 min-h-[50px] flex flex-col justify-end w-full">
                 <h3 className="font-extrabold text-slate-800 text-lg md:text-xl leading-tight uppercase tracking-wide group-hover:text-slate-900 transition-colors duration-300">
@@ -139,7 +144,7 @@ export function WhyStudyInItalySection() {
                 )}
               </div>
               
-              <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-8 ${card.iconColor} shadow-sm shrink-0`}>
+              <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-8 ${card.iconColor} shadow-sm shrink-0 backdrop-blur-md`}>
                 <card.icon size={36} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500" />
               </div>
               
