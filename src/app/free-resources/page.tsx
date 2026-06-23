@@ -25,7 +25,7 @@ export default function FreeResourcesPage() {
       id: "study-for-free",
       title: "Study in Italy for Free",
       description: "The complete step-by-step roadmap to securing 100% tuition waiver public education in Italy.",
-      icon: <GraduationCap className="text-blue-600" size={26} />,
+      icon: <GraduationCap className="text-blue-600" size={22} />,
       color: "from-blue-500/20 to-cyan-500/20",
       features: [
         "Step-by-step university application guide",
@@ -39,7 +39,7 @@ export default function FreeResourcesPage() {
       id: "scholarship-guide-2026",
       title: "Scholarship Guide 2026",
       description: "Your ultimate manual to regional Italian scholarships (DSU, DiscoLazio, EDISU, etc.) and application steps.",
-      icon: <Award className="text-indigo-600" size={26} />,
+      icon: <Award className="text-indigo-600" size={22} />,
       color: "from-indigo-500/20 to-purple-500/20",
       features: [
         "Income limit thresholds by region",
@@ -53,7 +53,7 @@ export default function FreeResourcesPage() {
       id: "cost-of-studying",
       title: "Cost of Studying in Italy",
       description: "A realistic breakdown of student living costs, rent comparison by city, food, transport, and utilities.",
-      icon: <Wallet className="text-emerald-600" size={26} />,
+      icon: <Wallet className="text-emerald-600" size={22} />,
       color: "from-emerald-500/20 to-teal-500/20",
       features: [
         "Rent comparison: Milan vs Rome vs Pisa vs Cassino",
@@ -67,7 +67,7 @@ export default function FreeResourcesPage() {
       id: "mbbs-in-italy",
       title: "MBBS in Italy",
       description: "Complete guide to the Italian Medical Admissions Test (IMAT), public medical school seat allocations, and cutoffs.",
-      icon: <Activity className="text-rose-600" size={26} />,
+      icon: <Activity className="text-rose-600" size={22} />,
       color: "from-rose-500/20 to-orange-500/20",
       features: [
         "IMAT test structure and subject breakdown",
@@ -175,39 +175,39 @@ export default function FreeResourcesPage() {
         </div>
 
         {/* 4-Card Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-16 max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16 max-w-7xl">
           {resources.map((resource, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, type: "spring", stiffness: 60, damping: 15 }}
-              className="relative bg-white rounded-[2rem] p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group flex flex-col h-full"
+              className="relative bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 overflow-hidden group flex flex-col h-full"
             >
               {/* Dynamic Gradient Blob Background */}
-              <div className={`absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br ${resource.color} blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out`} />
+              <div className={`absolute -top-10 -right-10 w-20 h-20 rounded-full bg-gradient-to-br ${resource.color} blur-[25px] group-hover:scale-150 transition-transform duration-700 ease-out`} />
 
               {/* Icon & Title Header */}
-              <div className="flex justify-between items-start mb-6 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+              <div className="flex justify-between items-start mb-4 relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-white transition-all duration-300">
                   {resource.icon}
                 </div>
               </div>
 
-              <h3 className="text-2xl font-extrabold text-slate-900 leading-tight mb-3 relative z-10 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-extrabold text-slate-900 leading-snug mb-2 relative z-10 group-hover:text-blue-600 transition-colors">
                 {resource.title}
               </h3>
 
-              <p className="text-slate-500 text-sm font-medium leading-relaxed mb-6 flex-grow relative z-10">
+              <p className="text-slate-500 text-xs font-medium leading-relaxed mb-4 flex-grow relative z-10">
                 {resource.description}
               </p>
 
-              <hr className="border-slate-100 mb-6 relative z-10" />
+              <hr className="border-slate-100 mb-4 relative z-10" />
 
               {/* Features List */}
-              <div className="relative z-10 mb-8">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">What's Inside:</h4>
-                <ul className="space-y-3">
+              <div className="relative z-10 mb-6">
+                <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">What's Inside:</h4>
+                <ul className="space-y-2.5">
                   {resource.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4.5 h-4.5 text-blue-500 shrink-0 mt-0.5" />
@@ -222,9 +222,9 @@ export default function FreeResourcesPage() {
               {/* Action Button */}
               <button
                 onClick={() => handleOpenModal(resource)}
-                className="w-full relative z-10 bg-slate-900 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg shadow-slate-900/5 hover:shadow-blue-600/25"
+                className="w-full relative z-10 bg-slate-900 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg shadow-slate-900/5 hover:shadow-blue-600/25 text-xs"
               >
-                <Download size={16} />
+                <Download size={14} />
                 Download PDF Guide
               </button>
             </motion.div>
