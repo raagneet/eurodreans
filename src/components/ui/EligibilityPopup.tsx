@@ -53,8 +53,8 @@ export function EligibilityPopup({ isOpen, onClose, initialTab = "admission" }: 
       }
       setStatus("eligible");
     } else if (activeTab === "scholarship") {
-      if (income >= 2500000) {
-        setFailReason("Unfortunately, scholarships are only available for family income below ₹25 Lakhs.");
+      if (income > 2500000) {
+        setFailReason("Unfortunately, scholarships are only available for family income up to ₹25 Lakhs.");
         setStatus("ineligible");
         return;
       }
