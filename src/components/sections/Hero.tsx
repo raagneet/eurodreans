@@ -42,7 +42,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative w-full pt-20 pb-16 lg:pt-28 lg:pb-20 flex flex-col justify-center overflow-hidden bg-slate-900"
+      className="relative w-full pt-20 pb-12 lg:pt-20 lg:pb-12 flex flex-col justify-center overflow-hidden bg-slate-900 min-h-screen"
     >
       <EligibilityPopup isOpen={showEligibility} onClose={() => setShowEligibility(false)} />
 
@@ -93,7 +93,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1] max-w-3xl"
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-3 leading-[1.05] max-w-3xl"
         >
           Study in{" "}
           <span className="relative inline-block group cursor-pointer">
@@ -121,11 +121,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mb-8 max-w-2xl"
         >
-          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-6">
+          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-snug mb-5">
             Eurodreams is offering FREE ITALIAN and FREE IELTS Classes to all Registered Students.
-            <br />
-            <br />
-            Admissions are open for September 2027 Intake
+            <span className="block mt-2 font-bold text-slate-700">Admissions are open for September 2027 Intake</span>
           </p>
 
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
@@ -148,7 +146,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-start w-full sm:w-auto gap-5 mb-10"
+          className="flex flex-col sm:flex-row items-center justify-start w-full sm:w-auto gap-4 mb-8"
         >
           <button
             onClick={() => setShowEligibility(true)}
