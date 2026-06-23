@@ -1,12 +1,12 @@
 import { HeroSection } from "@/components/sections/Hero";
-import { SocialProofSection } from "@/components/sections/SocialProof";
+import { UniversityMarquee } from "@/components/sections/UniversityMarquee";
 import { WhyStudyInItalySection } from "@/components/sections/WhyStudyInItaly";
+import { SocialMediaSection } from "@/components/sections/SocialMedia";
+import { RoadmapSection } from "@/components/sections/Roadmap";
+import { PricingSection } from "@/components/sections/Pricing";
 import { ProblemSolutionSection } from "@/components/sections/ProblemSolution";
-import { ServicesSection } from "@/components/sections/Services";
-import { HowItWorksSection } from "@/components/sections/HowItWorks";
-import { LeadMagnetSection } from "@/components/sections/LeadMagnet";
+import { ContactUsSection } from "@/components/sections/ContactUs";
 import { TestimonialsSection } from "@/components/sections/Testimonials";
-import { FAQSection } from "@/components/sections/FAQ";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 
 export default function Home() {
@@ -14,14 +14,14 @@ export default function Home() {
     <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <AnimatedBackground />
       <HeroSection />
-      <SocialProofSection />
+      <UniversityMarquee />
       <WhyStudyInItalySection />
-      <ProblemSolutionSection />
-      <ServicesSection />
-      <HowItWorksSection />
-      <LeadMagnetSection />
+      <SocialMediaSection />
       <TestimonialsSection />
-      <FAQSection />
+      <RoadmapSection />
+      <PricingSection />
+      <ProblemSolutionSection />
+      <ContactUsSection />
     </div>
   );
 }

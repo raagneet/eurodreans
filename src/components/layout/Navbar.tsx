@@ -7,8 +7,12 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
+  if (pathname === "/admin") return null;
+
   const { openBookCall } = useModal();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -19,11 +23,13 @@ export function Navbar() {
   });
 
   const navLinks = [
-    { name: "Italy", href: "/italy" },
-    { name: "Requirements", href: "/requirements" },
     { name: "Courses", href: "/courses" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Scholarship", href: "/italy-scholarships" },
+    { name: "Services", href: "/#programs" },
+    { name: "Success Stories", href: "/#testimonials" },
     { name: "About Us", href: "/about" },
+    { name: "About Italy", href: "/italy" },
+    { name: "Free resources", href: "/italy-scholarships" },
   ];
 
   return (
@@ -31,11 +37,10 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
-        isScrolled ? "bg-white/90 backdrop-blur-md border-slate-200/50 shadow-md shadow-slate-200/10" : "bg-white/40 backdrop-blur-sm border-white/10"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${isScrolled ? "bg-white/90 backdrop-blur-md border-slate-200/50 shadow-md shadow-slate-200/10" : "bg-white/40 backdrop-blur-sm border-white/10"
+        }`}
     >
-      <div className="max-w-7xl mx-auto w-full px-6 h-16 flex items-center justify-between">
+      <div className="w-full px-3 sm:px-6 lg:px-00 h-16 flex items-center justify-between">
         <Link href="/#hero" className="flex items-center group">
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -68,16 +73,19 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <motion.a 
+          <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSelWs6zYK01AKTnSAVMYb7CH5q-x6MEJKH13xANbdBwnSbCGw/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium h-11 px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 shadow-lg"
+            className="group relative inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-bold h-11 px-8 transition-all duration-300 hover:scale-105 active:scale-95 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/30"
           >
-            Book Free Call
-          </motion.a>
+            <span className="relative z-20 flex items-center gap-2 tracking-wide">
+              Book Free Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </span>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -108,17 +116,20 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100">
-              <motion.a 
+              <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSelWs6zYK01AKTnSAVMYb7CH5q-x6MEJKH13xANbdBwnSbCGw/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium h-11 px-6 py-2 bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 shadow-lg"
+                className="w-full group relative inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-bold h-12 px-8 transition-all duration-300 active:scale-95 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/30"
               >
-                Book Free Call
-              </motion.a>
+                <span className="relative z-20 flex items-center gap-2 tracking-wide">
+                  Book Free Consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right">
+                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  </svg>
+                </span>
+              </a>
             </div>
           </div>
         </motion.div>

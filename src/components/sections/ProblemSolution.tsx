@@ -41,7 +41,7 @@ export function ProblemSolutionSection() {
           
           {/* Left Column: Problems */}
           <div className="space-y-4">
-            <h3 className="text-base font-black text-rose-400 mb-6 px-4 uppercase tracking-widest">
+            <h3 className="text-base font-black text-red-600 mb-6 px-4 uppercase tracking-widest">
               ✕ The Old Way (Painful)
             </h3>
             {problems.map((problem, idx) => (
@@ -52,10 +52,10 @@ export function ProblemSolutionSection() {
                 viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.4, delay: idx * 0.05, type: "spring", stiffness: 120, damping: 20 }}
                 whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -10px rgba(225,29,72,0.15)" }}
-                className="flex items-center gap-4 glass-card p-5 border border-red-100 bg-red-50/50 shadow-md shadow-red-900/5 transition-all"
+                className="flex items-center gap-4 glass-card p-5 border border-red-200 bg-red-50 shadow-md shadow-red-900/5 transition-all"
               >
-                <XCircle className="text-red-500 shrink-0" size={28} />
-                <p className="text-slate-700 font-semibold">{problem}</p>
+                <XCircle className="text-red-600 shrink-0" size={28} />
+                <p className="text-slate-800 font-bold">{problem}</p>
               </motion.div>
             ))}
           </div>
