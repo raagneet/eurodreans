@@ -20,14 +20,14 @@ export function WhyStudyInItalySection() {
       title: "FREE EDUCATION",
       description: "To all International Students.",
       icon: GraduationCap,
-      color: "bg-blue-100/50 border-blue-200/50",
+      color: "bg-blue-200/60 border-blue-300/60",
       iconColor: "text-blue-700 bg-white/80",
     },
     {
       title: "GUARANTEED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
-      color: "bg-emerald-100/50 border-emerald-200/50",
+      color: "bg-emerald-200/60 border-emerald-300/60",
       iconColor: "text-emerald-700 bg-white/80",
     },
     {
@@ -35,7 +35,7 @@ export function WhyStudyInItalySection() {
       subtitle: "(RETURN ON INVESTMENT)",
       description: "With the help of scholarships",
       icon: TrendingUp,
-      color: "bg-purple-100/50 border-purple-200/50",
+      color: "bg-purple-200/60 border-purple-300/60",
       iconColor: "text-purple-700 bg-white/80",
     },
     {
@@ -43,7 +43,7 @@ export function WhyStudyInItalySection() {
       subtitle: "OPPORTUNITIES",
       description: "20 Hours per week",
       icon: Clock,
-      color: "bg-orange-100/50 border-orange-200/50",
+      color: "bg-orange-200/60 border-orange-300/60",
       iconColor: "text-orange-700 bg-white/80",
     },
     {
@@ -51,7 +51,7 @@ export function WhyStudyInItalySection() {
       subtitle: "VISA",
       description: "Permission to stay and work",
       icon: CalendarCheck,
-      color: "bg-rose-100/50 border-rose-200/50",
+      color: "bg-rose-200/60 border-rose-300/60",
       iconColor: "text-rose-700 bg-white/80",
     },
     {
@@ -59,7 +59,7 @@ export function WhyStudyInItalySection() {
       subtitle: "RESIDENCY",
       description: "After 5 years of stay in Italy",
       icon: Home,
-      color: "bg-teal-100/50 border-teal-200/50",
+      color: "bg-teal-200/60 border-teal-300/60",
       iconColor: "text-teal-700 bg-white/80",
     },
     {
@@ -67,7 +67,7 @@ export function WhyStudyInItalySection() {
       subtitle: "SALARY",
       description: "Depends on Job Profile (~₹3-4+ Lakhs/Month Easily)",
       icon: Banknote,
-      color: "bg-amber-100/50 border-amber-200/50",
+      color: "bg-amber-200/60 border-amber-300/60",
       iconColor: "text-amber-700 bg-white/80",
     },
     {
@@ -75,7 +75,7 @@ export function WhyStudyInItalySection() {
       subtitle: "EUROPE",
       description: "Schengen Visa access",
       icon: Plane,
-      color: "bg-indigo-100/50 border-indigo-200/50",
+      color: "bg-indigo-200/60 border-indigo-300/60",
       iconColor: "text-indigo-700 bg-white/80",
     },
   ];
