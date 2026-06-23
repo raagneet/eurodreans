@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const universities = [
   { name: "Sapienza University of Rome", logo: "/s/1.jpg" },
   { name: "University of Bologna", logo: "/s/2.jpg" },
@@ -18,6 +16,26 @@ export function UniversityMarquee() {
 
   return (
     <section className="w-full bg-slate-50/60 backdrop-blur-md border-y border-slate-200/80 py-10 overflow-hidden relative z-20">
+      <style>{`
+        @keyframes marquee-120 {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+        .animate-marquee-120 {
+          display: flex;
+          width: max-content;
+          animation: marquee-120 30s linear infinite;
+          will-change: transform;
+        }
+        .group:hover .animate-marquee-120 {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="container mx-auto px-6 mb-8 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[10px] font-bold tracking-widest text-blue-600 uppercase mb-3 shadow-sm">
           Partner Institutions
@@ -28,19 +46,7 @@ export function UniversityMarquee() {
       </div>
 
       <div className="flex overflow-hidden relative w-full group">
-        {/* Left Gradient Fade */}
-        <div className="absolute top-0 left-0 h-full w-12 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 40,
-            ease: "linear",
-          }}
-          className="flex whitespace-nowrap w-max items-center"
-        >
+        <div className="animate-marquee-120 items-center">
           {duplicatedUniversities.map((uni, idx) => {
             const isWhiteLogo =
               uni.logo.includes("logo_orizzontale_WHITE.svg") ||
@@ -72,10 +78,7 @@ export function UniversityMarquee() {
               </div>
             );
           })}
-        </motion.div>
-
-        {/* Right Gradient Fade */}
-        <div className="absolute top-0 right-0 h-full w-12 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+        </div>
       </div>
     </section>
   );
