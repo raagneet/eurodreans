@@ -176,7 +176,7 @@ export function Footer() {
         {/* Divider & Bottom bar */}
         <div className="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 font-medium">
-            <p className="text-slate-500">&copy; {new Date().getFullYear()} Eurodreams. All rights reserved.</p>
+            <p className="text-slate-500" suppressHydrationWarning>&copy; {new Date().getFullYear()} Eurodreams. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <Link href="/privacy" className="text-slate-500 hover:text-slate-800 transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="text-slate-500 hover:text-slate-800 transition-colors">Terms of Service</Link>
