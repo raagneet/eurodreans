@@ -20,63 +20,63 @@ export function WhyStudyInItalySection() {
       title: "FREE EDUCATION",
       description: "To all International Students.",
       icon: GraduationCap,
-      color: "bg-blue-300/80 border-blue-400/70",
-      iconColor: "text-blue-700 bg-white/90",
+      color: "bg-blue-200/70 border-blue-300/70",
+      iconColor: "text-blue-700 bg-white",
     },
     {
       title: "GUARANTEED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
-      color: "bg-emerald-300/80 border-emerald-400/70",
-      iconColor: "text-emerald-700 bg-white/90",
+      color: "bg-emerald-200/70 border-emerald-300/70",
+      iconColor: "text-emerald-700 bg-white",
     },
     {
       title: "EASIER ROI",
       subtitle: "(RETURN ON INVESTMENT)",
       description: "With the help of scholarships",
       icon: TrendingUp,
-      color: "bg-purple-300/80 border-purple-400/70",
-      iconColor: "text-purple-700 bg-white/90",
+      color: "bg-purple-200/70 border-purple-300/70",
+      iconColor: "text-purple-700 bg-white",
     },
     {
       title: "PART-TIME JOB",
       subtitle: "OPPORTUNITIES",
       description: "20 Hours per week",
       icon: Clock,
-      color: "bg-orange-300/80 border-orange-400/70",
-      iconColor: "text-orange-700 bg-white/90",
+      color: "bg-orange-200/70 border-orange-300/70",
+      iconColor: "text-orange-700 bg-white",
     },
     {
       title: "1-YEAR POST-STUDY",
       subtitle: "VISA",
       description: "Permission to stay and work",
       icon: CalendarCheck,
-      color: "bg-rose-300/80 border-rose-400/70",
-      iconColor: "text-rose-700 bg-white/90",
+      color: "bg-rose-200/70 border-rose-300/70",
+      iconColor: "text-rose-700 bg-white",
     },
     {
       title: "PERMANENT",
       subtitle: "RESIDENCY",
       description: "After 5 years of stay in Italy",
       icon: Home,
-      color: "bg-teal-300/80 border-teal-400/70",
-      iconColor: "text-teal-700 bg-white/90",
+      color: "bg-teal-200/70 border-teal-300/70",
+      iconColor: "text-teal-700 bg-white",
     },
     {
       title: "ATTRACTIVE",
       subtitle: "SALARY",
       description: "Depends on Job Profile (~₹3-4+ Lakhs/Month Easily)",
       icon: Banknote,
-      color: "bg-amber-300/80 border-amber-400/70",
-      iconColor: "text-amber-700 bg-white/90",
+      color: "bg-amber-200/70 border-amber-300/70",
+      iconColor: "text-amber-700 bg-white",
     },
     {
       title: "TRAVEL ACROSS",
       subtitle: "EUROPE",
       description: "Schengen Visa access",
       icon: Plane,
-      color: "bg-indigo-300/80 border-indigo-400/70",
-      iconColor: "text-indigo-700 bg-white/90",
+      color: "bg-indigo-200/70 border-indigo-300/70",
+      iconColor: "text-indigo-700 bg-white",
     },
   ];
 
@@ -134,23 +134,23 @@ export function WhyStudyInItalySection() {
               className={`flex flex-col items-center text-center p-7 rounded-[2rem] ${card.color} border shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 h-full group backdrop-blur-xl`}
             >
               <div className="mb-6 min-h-[50px] flex flex-col justify-end w-full">
-                <h3 className="font-extrabold text-slate-800 text-lg md:text-xl leading-tight uppercase tracking-wide group-hover:text-slate-900 transition-colors duration-300">
+                <h3 className="font-extrabold text-black text-lg md:text-xl leading-tight uppercase tracking-wide">
                   {card.title}
                 </h3>
                 {card.subtitle && (
-                  <h4 className="font-bold text-slate-500 text-sm md:text-base leading-tight uppercase mt-1">
+                  <h4 className="font-extrabold text-slate-900 text-sm md:text-base leading-tight uppercase mt-1">
                     {card.subtitle}
                   </h4>
                 )}
               </div>
               
-              <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-8 ${card.iconColor} shadow-sm shrink-0 backdrop-blur-md`}>
-                <card.icon size={36} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500" />
+              <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-8 ${card.iconColor} shadow-md shrink-0 backdrop-blur-md border border-white/40`}>
+                <card.icon size={36} strokeWidth={2} className="group-hover:scale-110 transition-transform duration-500" />
               </div>
               
               <div className="flex items-start gap-2.5 mt-auto text-left w-full justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-800 mt-[7px] shrink-0"></div>
-                <p className="text-slate-700 font-medium text-base md:text-[17px] leading-snug">
+                <div className="w-2 h-2 rounded-full bg-black mt-[7px] shrink-0"></div>
+                <p className="text-black font-semibold text-base md:text-[17px] leading-snug">
                   {card.description}
                 </p>
               </div>
