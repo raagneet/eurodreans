@@ -29,7 +29,7 @@ export function Navbar() {
     { name: "Success Stories", href: "/#testimonials" },
     { name: "About Us", href: "/about" },
     { name: "About Italy", href: "/italy" },
-    { name: "Free resources", href: "/italy-scholarships" },
+    { name: "Free resources", href: "/free-resources" },
   ];
 
   return (
