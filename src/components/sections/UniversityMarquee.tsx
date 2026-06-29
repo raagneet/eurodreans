@@ -37,9 +37,6 @@ export function UniversityMarquee() {
       `}</style>
 
       <div className="container mx-auto px-6 mb-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[10px] font-bold tracking-widest text-blue-600 uppercase mb-3 shadow-sm">
-          Partner Institutions
-        </div>
         <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
           Italy's Top Public Universities
         </h3>
@@ -63,9 +60,8 @@ export function UniversityMarquee() {
                   <img
                     src={uni.logo}
                     alt={`${uni.name} Logo`}
-                    className={`max-h-full max-w-full object-contain transition-all duration-300 ${
-                      isWhiteLogo ? "brightness-0" : ""
-                    }`}
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 ${isWhiteLogo ? "brightness-0" : ""
+                      }`}
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.src.includes('ui-avatars.com')) {

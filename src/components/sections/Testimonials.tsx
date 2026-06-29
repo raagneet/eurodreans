@@ -1,18 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export function TestimonialsSection() {
   const testimonials = [
-    { id: "1", videoUrl: "https://www.youtube.com/embed/KU3dx5vL4Y0?si=9xG491BgWOL8nvLd" },
-    { id: "2", videoUrl: "https://www.youtube.com/embed/cNlOJUpMs84?si=59m2Mpv6Ot4MKhcE" },
-    { id: "3", videoUrl: "https://www.youtube.com/embed/FPm2qAvEVD4?si=iF7ap4Z34h8ngCQN" },
-    { id: "4", videoUrl: "https://www.youtube.com/embed/Cc8ogtWgbo0?si=Lulqe_0kmi13Oirr" },
-    { id: "5", videoUrl: "https://www.youtube.com/embed/4OCy0kuRzuk?si=3lZQ6xDF2rjkIPRI" },
-    { id: "6", videoUrl: "https://www.youtube.com/embed/0LWFg4-OSiU?si=KzS32buFY0KA5aBZ" },
-    { id: "7", videoUrl: "https://www.youtube.com/embed/u9q6iiRA1p4?si=yNSSqB8wLOvdI1_d" },
-    { id: "8", videoUrl: "https://www.youtube.com/embed/qqfE60bWu8k?si=I0xq__-FzytBvtaX" },
+    { id: "1", videoId: "KU3dx5vL4Y0", videoUrl: "https://www.youtube.com/embed/KU3dx5vL4Y0?si=9xG491BgWOL8nvLd" },
+    { id: "2", videoId: "cNlOJUpMs84", videoUrl: "https://www.youtube.com/embed/cNlOJUpMs84?si=59m2Mpv6Ot4MKhcE" },
+    { id: "3", videoId: "FPm2qAvEVD4", videoUrl: "https://www.youtube.com/embed/FPm2qAvEVD4?si=iF7ap4Z34h8ngCQN" },
+    { id: "4", videoId: "Cc8ogtWgbo0", videoUrl: "https://www.youtube.com/embed/Cc8ogtWgbo0?si=Lulqe_0kmi13Oirr" },
+    { id: "5", videoId: "4OCy0kuRzuk", videoUrl: "https://www.youtube.com/embed/4OCy0kuRzuk?si=3lZQ6xDF2rjkIPRI" },
+    { id: "6", videoId: "0LWFg4-OSiU", videoUrl: "https://www.youtube.com/embed/0LWFg4-OSiU?si=KzS32buFY0KA5aBZ" },
+    { id: "7", videoId: "u9q6iiRA1p4", videoUrl: "https://www.youtube.com/embed/u9q6iiRA1p4?si=yNSSqB8wLOvdI1_d" },
+    { id: "8", videoId: "qqfE60bWu8k", videoUrl: "https://www.youtube.com/embed/qqfE60bWu8k?si=I0xq__-FzytBvtaX" },
   ];
+
+  const [titles, setTitles] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const fetchTitles = async () => {
+      const fetchedTitles: Record<string, string> = {};
+      
+      await Promise.all(
+        testimonials.map(async (test) => {
+          try {
+            // Using noembed to bypass CORS issues directly in the browser
+            const res = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${test.videoId}`);
+            const data = await res.json();
+            if (data.title) {
+              fetchedTitles[test.id] = data.title;
+            }
+          } catch (e) {
+            console.error("Failed to fetch title for video:", test.videoId);
+          }
+        })
+      );
+      
+      setTitles(fetchedTitles);
+    };
+
+    fetchTitles();
+  }, []);
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -82,10 +111,22 @@ export function TestimonialsSection() {
                   <iframe 
                     className="absolute top-0 left-0 w-full h-full border-0"
                     src={test.videoUrl} 
-                    title={`Student Success Story ${test.id}`}
+                    title={titles[test.id] || `Student Success Story ${test.id}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
                   ></iframe>
+                </div>
+                
+                {/* Dynamically Fetched Video Title */}
+                <div className="mt-4 px-2 pb-2">
+                  <h3 className="text-sm font-bold text-slate-800 line-clamp-2 min-h-[40px]">
+                    {titles[test.id] ? titles[test.id] : (
+                      <div className="animate-pulse flex flex-col gap-2">
+                        <div className="h-4 bg-slate-200 rounded w-3/4"></div>
+                        <div className="h-4 bg-slate-200 rounded w-1/2"></div>
+                      </div>
+                    )}
+                  </h3>
                 </div>
                 
               </div>

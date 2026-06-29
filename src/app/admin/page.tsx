@@ -75,14 +75,26 @@ export default function AdminPage() {
   }, [isLoggedIn]);
 
   // Handle Login submission
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (usernameInput === "eurodreamadmin" && passwordInput === "Eurodreams@910") {
-      sessionStorage.setItem("admin_authenticated", "true");
-      setIsLoggedIn(true);
-      setLoginError("");
-    } else {
-      setLoginError("Invalid Admin ID or Password. Please try again.");
+    try {
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: usernameInput, password: passwordInput })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        sessionStorage.setItem("admin_authenticated", "true");
+        setIsLoggedIn(true);
+        setLoginError("");
+      } else {
+        setLoginError(data.message || "Invalid Admin ID or Password. Please try again.");
+      }
+    } catch (error) {
+      setLoginError("An error occurred during login. Please try again.");
     }
   };
 

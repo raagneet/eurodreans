@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 import { usePathname } from "next/navigation";
 
@@ -28,8 +28,13 @@ export function Navbar() {
     { name: "Services", href: "/services" },
     { name: "Success Stories", href: "/#testimonials" },
     { name: "About Us", href: "/about" },
-    { name: "About Italy", href: "/italy" },
     { name: "Free resources", href: "/free-resources" },
+    {
+      name: "More",
+      dropdown: [
+        { name: "About Italy", href: "/italy" }
+      ]
+    },
   ];
 
   return (
@@ -62,13 +67,35 @@ export function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-semibold text-gray-900 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
+            link.dropdown ? (
+              <div key={link.name} className="relative group">
+                <button className="flex items-center gap-1 text-sm font-semibold text-gray-900 hover:text-primary transition-colors h-16">
+                  {link.name}
+                  <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
+                </button>
+                <div className="absolute right-0 top-[60px] w-48 bg-white border border-slate-200 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="py-2 flex flex-col">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        href={sublink.href}
+                        className="px-4 py-2 text-sm text-gray-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href!}
+                className="text-sm font-semibold text-gray-900 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -106,14 +133,34 @@ export function Navbar() {
         >
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-gray-600 hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
+              link.dropdown ? (
+                <div key={link.name} className="flex flex-col gap-3">
+                  <span className="text-lg font-medium text-gray-900 flex items-center justify-between">
+                    {link.name}
+                  </span>
+                  <div className="pl-4 flex flex-col gap-3 border-l-2 border-gray-100 ml-2">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        href={sublink.href}
+                        className="text-base font-medium text-gray-600 hover:text-primary transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href!}
+                  className="text-lg font-medium text-gray-600 hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100">
               <a

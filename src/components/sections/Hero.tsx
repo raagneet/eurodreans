@@ -31,7 +31,10 @@ export function HeroSection() {
   // 🛠️ TWEAK THESE VALUES TO MOVE THE BACKGROUND GIRL 🛠️
   const bgZoom = 1.0;     // 1.0 is normal, 1.2 is zoomed in 20%
   const bgMoveX = "5%";   // Move left/right (e.g. "10%", "-50px")
-  const bgMoveY = "2.5%";   // Move up/down (e.g. "5%", "-20px")
+  const bgMoveY = "8%";   // Move up/down (e.g. "5%", "-20px")
+
+  // 🛠️ TWEAK THIS VALUE TO MOVE ALL THE TEXT DOWN OR UP 🛠️
+  const textMoveY = "15px"; // Use positive values (e.g. "30px", "50px") to move text DOWN. Use negative (e.g. "-20px") to move UP.
   // ----------------------------------------------------
 
   useEffect(() => {
@@ -74,7 +77,10 @@ export function HeroSection() {
       </div>
 
       {/* Left-Aligned Content Container */}
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-20 h-full flex flex-col items-start justify-center text-left">
+      <div
+        className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-20 h-full flex flex-col items-start justify-center text-left"
+        style={{ transform: `translateY(${textMoveY})` }}
+      >
         {/* Subtitle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
