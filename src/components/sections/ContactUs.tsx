@@ -81,7 +81,7 @@ export function ContactUsSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-sm mb-0.5">Visit Us</h4>
-                  <p className="text-slate-500 text-xs">Connaught Place, New Delhi</p>
+                  <p className="text-slate-500 text-xs max-w-[250px]">306, 3rd Floor, Arbitto Mall, Near C-21 Mall, Vijay Nagar, Indore, MP 452010</p>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@ export function ContactUsSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-sm mb-0.5">Call Us</h4>
-                  <p className="text-slate-500 text-xs">+91 98765 43210</p>
+                  <p className="text-slate-500 text-xs">+91 6267332364 <span className="mx-1 text-slate-300">|</span> +91 8817147082</p>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ export function ContactUsSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-sm mb-0.5">Email Us</h4>
-                  <p className="text-slate-500 text-xs">hello@eurodreams.com</p>
+                  <p className="text-slate-500 text-xs">info.eurodreamsstudyabroad@gmail.com</p>
                 </div>
               </div>
             </div>

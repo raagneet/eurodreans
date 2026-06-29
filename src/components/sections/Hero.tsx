@@ -90,7 +90,7 @@ export function HeroSection() {
         >
           <span className="h-[2px] w-8 bg-orange-600 rounded-full" />
           <span className="text-orange-600 font-extrabold tracking-widest uppercase text-xs sm:text-sm">
-            INDIA'S LEADING ITALY EDUCATION EXPERTS.
+            INDIA'S LEADING ITALY EDUCATION EXPERT.
           </span>
         </motion.div>
 
