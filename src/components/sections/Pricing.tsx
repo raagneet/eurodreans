@@ -124,11 +124,7 @@ export function PricingSection() {
                 ))}
               </div>
 
-              <button 
-                className="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wide transition-all mt-auto bg-slate-100 text-slate-900 hover:bg-blue-600 hover:text-white"
-              >
-                {plan.cta}
-              </button>
+
             </motion.div>
           ))}
         </div>
