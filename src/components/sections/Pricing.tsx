@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Star } from "lucide-react";
+import { CheckCircle2, Star, ArrowRight } from "lucide-react";
 
 const plans = [
   {
@@ -32,7 +32,7 @@ const plans = [
       "DOV (Declaration of value) Assistance"
     ],
     popular: false,
-    cta: "Begin Pre-Enrollment",
+    cta: "Begin Pre Enrollment",
   },
   {
     name: "Scholarship Process",
@@ -123,6 +123,18 @@ export function PricingSection() {
                   </div>
                 ))}
               </div>
+
+              <motion.a
+                href={`https://pages.razorpay.com/eurodreams?payment_reason=${encodeURIComponent(plan.cta)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm text-center shadow-md hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                <span>{plan.cta}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </motion.a>
 
 
             </motion.div>
