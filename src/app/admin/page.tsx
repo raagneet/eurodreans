@@ -123,6 +123,7 @@ export default function AdminPage() {
   const mastersCount = enquiries.filter(e => e.interest === "masters").length;
   const bachelorsCount = enquiries.filter(e => e.interest === "bachelors").length;
   const scholarshipCount = enquiries.filter(e => e.interest === "scholarship").length;
+  const mbbsCount = enquiries.filter(e => e.interest === "mbbs" || e.interest === "imat").length;
 
   // Clear all enquiries confirm
   const confirmClearAll = async () => {
@@ -383,7 +384,7 @@ export default function AdminPage() {
       <main className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col gap-8">
         
         {/* Stats Grid */}
-        <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <section className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           <div className="p-5 bg-white border border-slate-200 rounded-2xl flex flex-col justify-between shadow-sm">
             <span className="text-slate-500 font-bold text-xs uppercase tracking-wider">Total Enquiries</span>
             <div className="flex items-baseline gap-2 mt-4">
@@ -403,6 +404,13 @@ export default function AdminPage() {
             <div className="flex items-baseline gap-2 mt-4">
               <span className="text-4xl font-extrabold text-emerald-600">{bachelorsCount}</span>
               <span className="text-slate-500 text-xs font-semibold">program leads</span>
+            </div>
+          </div>
+          <div className="p-5 bg-white border border-slate-200 rounded-2xl flex flex-col justify-between shadow-sm">
+            <span className="text-slate-500 font-bold text-xs uppercase tracking-wider">MBBS & IMAT</span>
+            <div className="flex items-baseline gap-2 mt-4">
+              <span className="text-4xl font-extrabold text-rose-600">{mbbsCount}</span>
+              <span className="text-slate-500 text-xs font-semibold">medical leads</span>
             </div>
           </div>
           <div className="p-5 bg-white border border-slate-200 rounded-2xl flex flex-col justify-between shadow-sm">
@@ -439,6 +447,8 @@ export default function AdminPage() {
               <option value="all">All Enquiries</option>
               <option value="bachelors">Bachelor's Degree</option>
               <option value="masters">Master's Degree</option>
+              <option value="mbbs">MBBS in Italy</option>
+              <option value="imat">IMAT Prep Support</option>
               <option value="scholarship">100% Scholarship</option>
             </select>
           </div>
@@ -482,9 +492,11 @@ export default function AdminPage() {
                         <span className={`text-[10px] font-black tracking-wider uppercase px-2 py-0.5 rounded-full ${
                           enq.interest === "masters" ? "bg-blue-50 text-blue-650" :
                           enq.interest === "bachelors" ? "bg-emerald-50 text-emerald-650" :
+                          enq.interest === "mbbs" ? "bg-rose-50 text-rose-650" :
+                          enq.interest === "imat" ? "bg-pink-50 text-pink-650" :
                           "bg-indigo-50 text-indigo-650"
                         }`}>
-                          {enq.interest}
+                          {enq.interest === "mbbs" ? "MBBS in Italy" : enq.interest === "imat" ? "IMAT Prep" : enq.interest === "scholarship" ? "Scholarship" : enq.interest}
                         </span>
                       </div>
                       <p className="text-slate-500 text-xs flex items-center gap-1.5 truncate">
@@ -559,9 +571,11 @@ export default function AdminPage() {
                         <span className={`text-xs font-black tracking-wider uppercase px-2 py-0.5 rounded ${
                           selectedEnquiry.interest === "masters" ? "bg-blue-50 text-blue-650" :
                           selectedEnquiry.interest === "bachelors" ? "bg-emerald-50 text-emerald-650" :
+                          selectedEnquiry.interest === "mbbs" ? "bg-rose-50 text-rose-650" :
+                          selectedEnquiry.interest === "imat" ? "bg-pink-50 text-pink-650" :
                           "bg-indigo-50 text-indigo-650"
                         }`}>
-                          {selectedEnquiry.interest}
+                          {selectedEnquiry.interest === "mbbs" ? "MBBS in Italy" : selectedEnquiry.interest === "imat" ? "IMAT Prep" : selectedEnquiry.interest === "scholarship" ? "100% Scholarship" : selectedEnquiry.interest}
                         </span>
                       </div>
                     </div>

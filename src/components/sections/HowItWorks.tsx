@@ -19,7 +19,7 @@ export function HowItWorksSection() {
     },
     {
       title: "Application + Visa",
-      desc: "Seamless document preparation, university applications, and guaranteed visa assistance.",
+      desc: "Seamless document preparation, university applications, and end-to-end visa assistance.",
       icon: <Handshake size={32} className="text-white" />,
       color: "from-secondary to-accent",
     }

@@ -174,6 +174,8 @@ export function ContactUsSection() {
                     <option value="" disabled>Select an area of interest</option>
                     <option value="bachelors">Bachelor's Degree</option>
                     <option value="masters">Master's Degree</option>
+                    <option value="mbbs">MBBS in Italy</option>
+                    <option value="imat">IMAT Prep Support</option>
                     <option value="scholarship">100% Scholarship Support</option>
                   </select>
                   <label htmlFor="interest" className="absolute left-0 -top-3.5 text-xs font-bold text-blue-600 transition-all">

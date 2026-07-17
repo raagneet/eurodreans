@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Star, ArrowRight } from "lucide-react";
 
+const getAmountInRupees = (priceStr: string) => {
+  const cleanStr = priceStr.replace(/[^0-9]/g, "");
+  const amount = parseInt(cleanStr, 10);
+  return isNaN(amount) ? 0 : amount;
+};
+
 const plans = [
   {
     name: "Admission Process",
@@ -17,7 +23,7 @@ const plans = [
       "Application sent to highly regarded Universities"
     ],
     popular: false,
-    cta: "Start Admission",
+    paymentReason: "Admission"
   },
   {
     name: "Pre-Enrollment",
@@ -32,7 +38,7 @@ const plans = [
       "DOV (Declaration of value) Assistance"
     ],
     popular: false,
-    cta: "Begin Pre Enrollment",
+    paymentReason: "Preenrollment"
   },
   {
     name: "Scholarship Process",
@@ -44,12 +50,12 @@ const plans = [
       "Courier Charges"
     ],
     popular: false,
-    cta: "Secure Scholarship",
+    paymentReason: "Scholarship"
   },
   {
     name: "VISA Process",
     price: "₹ 40,000",
-    description: "Phase 4: Finalizing your move with a guaranteed step-by-step visa plan.",
+    description: "Phase 4: Finalizing your move with an assured step-by-step visa plan.",
     features: [
       "Visa application assistance & Appointment",
       "Application form filling & Cover letter",
@@ -59,7 +65,7 @@ const plans = [
       "Visa Interview Preparation (Mock Interviews)"
     ],
     popular: false,
-    cta: "Apply For Visa",
+    paymentReason: "Visa"
   }
 ];
 
@@ -125,14 +131,14 @@ export function PricingSection() {
               </div>
 
               <motion.a
-                href={`https://pages.razorpay.com/eurodreams?payment_reason=${encodeURIComponent(plan.cta)}`}
+                href={`https://pages.razorpay.com/eurodreams?amount=${getAmountInRupees(plan.price)}&payment_reason=${plan.paymentReason}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm text-center shadow-md hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                <span>{plan.cta}</span>
+                <span>Pay Now</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.a>
 

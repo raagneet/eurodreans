@@ -17,6 +17,12 @@ import { useModal } from "@/context/ModalContext";
 
 export default function ServicesPage() {
   const { openBookCall } = useModal();
+  
+  const getAmountInRupees = (priceStr: string) => {
+    const cleanStr = priceStr.split("/")[0].replace(/[^0-9]/g, "");
+    const amount = parseInt(cleanStr, 10);
+    return isNaN(amount) ? 0 : amount;
+  };
 
   const services = [
     {
@@ -30,7 +36,8 @@ export default function ServicesPage() {
         "Shortlisting top public universities",
         "Assistance with pre-enrollment",
         "Full scholarship & visa application support"
-      ]
+      ],
+      paymentReason: "Counseling"
     },
     {
       name: "Document Correction Only",
@@ -43,7 +50,8 @@ export default function ServicesPage() {
         "LOR flow & language optimization",
         "Cover letter structure corrections",
         "Expert feedback on content strength"
-      ]
+      ],
+      paymentReason: "Correction"
     },
     {
       name: "Medical Test (IMAT)",
@@ -56,7 +64,8 @@ export default function ServicesPage() {
         "Deep dive into chemistry, biology, math",
         "Critical thinking & logical reasoning prep",
         "Previous years' exam analysis"
-      ]
+      ],
+      paymentReason: "IMAT"
     },
     {
       name: "English Test Preparations",
@@ -69,7 +78,8 @@ export default function ServicesPage() {
         "Doubt clearing sessions",
         "Mock exams & performance feedback",
         "Tips to master score-specific criteria"
-      ]
+      ],
+      paymentReason: "English"
     },
     {
       name: "Entrance Exam Preparations",
@@ -82,7 +92,8 @@ export default function ServicesPage() {
         "Exam-taking strategy & speed guides",
         "Sectional practice assessments",
         "Detailed performance analytics"
-      ]
+      ],
+      paymentReason: "Entrance"
     },
     {
       name: "Language Classes",
@@ -95,20 +106,22 @@ export default function ServicesPage() {
         "A1 & A2 grammar basics",
         "Interactive speaking & listening tasks",
         "Culture & vocabulary sessions"
-      ]
+      ],
+      paymentReason: "Language"
     },
     {
       name: "Attestations, Apostille & Translations",
       price: "₹ 5,000 / Doc",
       description: "Fast-track and reliable processing for all legal and certified document requirements.",
-      icon: <FileCheck className="text-violet-600" size={24} />,
+      icon: <FileCheck className="text-violet-650" size={24} />,
       color: "from-violet-500/20 to-fuchsia-500/20",
       features: [
         "Apostille validation assistance",
         "Assistance with official translations",
         "Attestation of educational documents",
         "Doorstep document pick & drop assistance"
-      ]
+      ],
+      paymentReason: "Attestation"
     },
     {
       name: "Overseas Medical Insurance",
@@ -121,7 +134,8 @@ export default function ServicesPage() {
         "Cashless hospitalization network",
         "Quick policy generation & activation",
         "Pre-existing illness advice"
-      ]
+      ],
+      paymentReason: "Insurance"
     }
   ];
 
@@ -205,7 +219,7 @@ export default function ServicesPage() {
               <hr className="border-slate-100 mb-4 relative z-10" />
 
               {/* Features List */}
-              <div className="relative z-10">
+              <div className="relative z-10 mb-6">
                 <ul className="space-y-2">
                   {service.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-2">
@@ -216,6 +230,21 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Pay Now Button */}
+              <div className="mt-auto pt-4 relative z-10">
+                <motion.a
+                  href={`https://pages.razorpay.com/eurodreams?amount=${getAmountInRupees(service.price)}&payment_reason=${service.paymentReason}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs text-center shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-1.5"
+                >
+                  Pay Now
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </motion.a>
               </div>
             </motion.div>
           ))}

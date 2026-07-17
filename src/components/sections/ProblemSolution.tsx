@@ -33,7 +33,7 @@ export function ProblemSolutionSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">it&apos;s a breeze.</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-            We turn a complex, bureaucratic nightmare into a smooth, guaranteed journey to your dream university.
+            We turn a complex, bureaucratic nightmare into a smooth, assured journey to your dream university.
           </p>
         </div>
 

@@ -25,7 +25,7 @@ export function WhyStudyInItalySection() {
       iconColor: "text-blue-600 bg-white/90 shadow-sm border border-white",
     },
     {
-      title: "GUARANTEED SCHOLARSHIPS",
+      title: "ASSURED SCHOLARSHIPS",
       description: "Up to €8,000 /year (~₹8 Lakhs)",
       icon: Award,
       gradient: "bg-gradient-to-br from-emerald-700 to-emerald-900",
